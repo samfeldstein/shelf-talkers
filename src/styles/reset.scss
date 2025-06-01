@@ -49,7 +49,13 @@ hr {
   padding: 0;
 }
 
-/* Animations */
+// Text selection
+::selection {
+  background-color: black;
+  color: white;
+}
+
+// Animations
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -60,6 +66,7 @@ hr {
   }
 }
 
+// Print styles
 @media print {
   body {
     // Adds blank page otherwise

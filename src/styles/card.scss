@@ -23,6 +23,22 @@
   text-transform: lowercase;
 }
 
+// Screen-only styles
+@media screen {
+  [contenteditable].placeholder::before {
+    content: attr(data-placeholder);
+    color: #757575;
+    pointer-events: none;
+    position: absolute;
+    opacity: 0.6;
+  }
+
+  [contenteditable] {
+    position: relative;
+  }
+}
+
+// Print styles
 @media print {
   .card {
     --base-font: 14px;

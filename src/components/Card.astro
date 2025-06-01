@@ -6,9 +6,24 @@ const { title, author, blurb, submitter } = Astro.props;
 
 <div class="card">
   <div class="card-header">
-    <div class="title" contenteditable="true">{title}</div>
-    <div class="author" contenteditable="true">{author}</div>
+    <div class="title" contenteditable="true" data-placeholder="Title">
+      <!-- If title prop doesn't exist, render whitespace. Placeholder doesn't work otherwise. -->
+      {title && title}
+    </div>
+    <div class="author" contenteditable="true" data-placeholder="Author">
+      {author && author}
+    </div>
   </div>
-  <p class="blurb" contenteditable="true">{blurb}</p>
-  <div class="submitter" contenteditable="true">{submitter}</div>
+  <p class="blurb" contenteditable="true" data-placeholder="Blurb...">
+    {blurb && blurb}
+  </p>
+  <div
+    class="submitter"
+    contenteditable="true"
+    data-placeholder="Submitted by..."
+  >
+    {submitter && submitter}
+  </div>
 </div>
+
+<script src="../scripts/placeholders.js"></script>
