@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -11,4 +7,26 @@
   margin: 0 auto;
   width: 100%;
   height: 100%;
+}
+
+@media print {
+
+  h1,
+  form {
+    display: none;
+  }
+
+  .card-container {
+    gap: 0;
+  }
+
+  @page {
+    size: landscape;
+    // Setting by shorthand, didn't work, fyi
+    margin-top: 0.88in;
+    margin-bottom: 0in;
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+    border: 1px solid black;
+  }
 }
