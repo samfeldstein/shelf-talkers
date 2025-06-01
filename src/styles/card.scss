@@ -14,7 +14,6 @@
 }
 
 .author {
-  font-size: var(--font-size-body);
   font-variant: small-caps;
   text-transform: lowercase;
 }
@@ -26,34 +25,22 @@
 
 @media print {
   .card {
+    --base-font: 14px;
+    --title-size: 1.5;
+    // Layout
     height: 2.25in;
     width: 5in;
     overflow: hidden;
-    // Typography
-    font-size: 14px;
-    text-align: justify;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    // Typography
+    font-size: var(--base-font);
+    text-align: justify;
   }
 
   .title {
-    font-size: 20px;
-  }
-
-  .author {
-    font-size: 14px;
-    font-variant: small-caps;
-    text-transform: lowercase;
-  }
-
-  .blurb {
-    font-size: 14px;
-  }
-
-  .submitter {
-    font-size: 14px;
-    font-weight: 700;
+    font-size: calc(var(--base-font) * var(--title-size));
   }
 }
