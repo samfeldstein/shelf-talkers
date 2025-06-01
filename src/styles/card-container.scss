@@ -1,0 +1,23 @@
+.card-container {
+  display: grid;
+  gap: 1rem;
+  // Center
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+  // Two columns on big screens
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+  }
+}
+
+@media print {
+  .card-container {
+    // Two columns. Must set explicitly for some reason.
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}

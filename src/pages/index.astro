@@ -1,5 +1,5 @@
 ---
-import Card from "../components/Card.astro";
+import CardContainer from "../components/CardContainer.astro";
 // Styles
 import "../styles/reset.scss";
 import "../styles/config.scss";
@@ -24,14 +24,7 @@ const siteTitle = "Shelf Talker Generator";
 				Click any text to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd
 				> on Windows.
 			</p>
-			<div class="card-container" id="card-container">
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-			</div>
+			<CardContainer />
 		</main>
 	</body>
 </html>
