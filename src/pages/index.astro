@@ -2,7 +2,10 @@
 import Card from "../components/Card.astro";
 // Styles
 import "../styles/reset.scss";
-import "../styles/home.scss";
+import "../styles/config.scss";
+import "../styles/global.scss";
+
+const siteTitle = "Shelf Talker Generator";
 ---
 
 <html lang="en">
@@ -10,12 +13,17 @@ import "../styles/home.scss";
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Book Shelf Talker Generator</title>
+		<title>{siteTitle}</title>
 	</head>
 	<body>
+		<header>
+			<h1>{siteTitle}</h1>
+		</header>
 		<main>
-			<h1>Book Shelf Talker Generator</h1>
-			<!-- <Form/> -->
+			<p class="instructions">
+				Click any text to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd
+				> on Windows.
+			</p>
 			<div class="card-container" id="card-container">
 				<Card />
 				<Card />
