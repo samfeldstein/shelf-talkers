@@ -6,24 +6,30 @@ const { title, author, blurb, submitter } = Astro.props;
 
 <div class="card">
   <div class="card-header">
-    <div class="title" contenteditable="true" data-placeholder="Title">
-      <!-- If title prop doesn't exist, render whitespace. Placeholder doesn't work otherwise. -->
-      {title && title}
-    </div>
-    <div class="author" contenteditable="true" data-placeholder="Author">
-      {author && author}
-    </div>
+    <!-- Using set:html gets around placeholder issue. If props in div body, placeholder's don't work. -->
+    <div
+      class="title"
+      contenteditable="true"
+      data-placeholder="Title"
+      set:html={title}
+    />
+    <div
+      class="author"
+      contenteditable="true"
+      data-placeholder="Author"
+      set:html={author}
+    />
   </div>
-  <p class="blurb" contenteditable="true" data-placeholder="Blurb...">
-    {blurb && blurb}
-  </p>
+  <p
+    class="blurb"
+    contenteditable="true"
+    data-placeholder="Blurb..."
+    set:html={blurb}
+  />
   <div
     class="submitter"
     contenteditable="true"
     data-placeholder="Submitted by..."
-  >
-    {submitter && submitter}
-  </div>
+    set:html={submitter}
+  />
 </div>
-
-<script src="../scripts/placeholders.js"></script>

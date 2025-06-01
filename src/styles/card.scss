@@ -1,9 +1,14 @@
 .card {
+  // Border
   border-width: 1px;
   border-style: solid;
   border-color: #d9d9d9;
-  text-align: justify;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // Typography
+  text-align: justify;
 }
 
 .title {
@@ -18,6 +23,10 @@
   text-transform: lowercase;
 }
 
+.blurb {
+  flex: 1;
+}
+
 .submitter {
   font-variant: small-caps;
   text-transform: lowercase;
@@ -25,16 +34,11 @@
 
 // Screen-only styles
 @media screen {
-  [contenteditable].placeholder::before {
+  [contenteditable]:empty::before {
     content: attr(data-placeholder);
-    color: #757575;
+    color: #888;
     pointer-events: none;
-    position: absolute;
-    opacity: 0.6;
-  }
-
-  [contenteditable] {
-    position: relative;
+    display: block;
   }
 }
 
@@ -48,9 +52,6 @@
     width: 5in;
     overflow: hidden;
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     // Typography
     font-size: var(--base-font);
     text-align: justify;
