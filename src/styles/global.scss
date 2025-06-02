@@ -17,6 +17,16 @@ h1 {
   font-variant: small-caps;
   text-transform: lowercase;
   text-align: center;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: italic;
+  text-align: right;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 0.25rem;
 }
 
 a {
@@ -32,7 +42,7 @@ a {
   }
 }
 
-kbd {
+kbd, code {
   font-family: inherit;
   font-weight: 700;
 }

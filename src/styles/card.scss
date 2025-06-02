@@ -49,7 +49,7 @@
 // Print styles
 @media print {
   .card {
-    --print-size: 14px;
+    --print-size: 15.25px;
     --title-size: 1.5;
     --letter-spacing: calc((var(--print-size) * 0.1));
     // Layout
