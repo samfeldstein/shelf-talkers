@@ -1,10 +1,40 @@
-<input
-  type="number"
-  id="font-size-input"
-  placeholder="Font size"
-  step="0.5"
-  min="1"
-/>
+<div class="font-size">
+  <label for="font-size-input">Printed Font Size:</label>
+  <input
+    type="number"
+    id="font-size-input"
+    placeholder="Font size"
+    step="0.5"
+    min="1"
+  />
+</div>
+
+<style>
+  div {
+    margin: 0.25rem 0;
+  }
+
+  input {
+    border: 2px solid #d9d9d9;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 80px;
+    text-align: center;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #666;
+      box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
+    }
+
+    &:hover {
+      border-color: #999;
+    }
+  }
+</style>
+
 <script>
   const fontInput = document.getElementById("font-size-input");
 
