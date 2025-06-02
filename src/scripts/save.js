@@ -7,6 +7,7 @@ function saveAllCards() {
     blurb: card.querySelector('.blurb').innerHTML,
     submitter: card.querySelector('.submitter').innerHTML
   }));
+
   localStorage.setItem('allShelfTalkerData', JSON.stringify(allData));
 }
 

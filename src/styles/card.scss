@@ -54,7 +54,11 @@
     padding: 10px;
     // Typography
     font-size: var(--base-font);
-    text-align: justify;
+
+    p {
+      margin: calc(var(--base-font) * 0.75) 0;
+      text-align: justify;
+    }
   }
 
   .title {

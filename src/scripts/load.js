@@ -6,10 +6,17 @@ function loadAllCards() {
 
     cards.forEach((card, index) => {
       if (allData[index]) {
-        card.querySelector('.title').innerHTML = allData[index].title || '';
-        card.querySelector('.author').innerHTML = allData[index].author || '';
-        card.querySelector('.blurb').innerHTML = allData[index].blurb || '';
-        card.querySelector('.submitter').innerHTML = allData[index].submitter || '';
+        const cardData = allData[index];
+        const isEmpty = Object.values(cardData).every(value =>
+          value.trim() === '' || value.trim() === '<br>'
+        );
+
+        if (!isEmpty) {
+          card.querySelector('.title').innerHTML = cardData.title || '';
+          card.querySelector('.author').innerHTML = cardData.author || '';
+          card.querySelector('.blurb').innerHTML = cardData.blurb || '';
+          card.querySelector('.submitter').innerHTML = cardData.submitter || '';
+        }
       }
     });
   }
@@ -21,8 +28,6 @@ function loadAllCards() {
       .replace(/\*([^*]+)\*/g, '<em>$1</em>');
   });
 }
-
-
 
 // Load on page load
 window.addEventListener('load', loadAllCards);
