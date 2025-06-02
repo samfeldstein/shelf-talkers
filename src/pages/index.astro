@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import CustomFonts from "../components/CustomFonts.astro";
+import FontSize from "../components/FontSize.astro";
 import CardContainer from "../components/CardContainer.astro";
 import "../styles/home.scss";
 ---
@@ -15,7 +16,10 @@ import "../styles/home.scss";
 			Click any field to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd>
 			on Windows. See the <a href="/help">Help page</a> for more.
 		</p>
-		<CustomFonts />
+		<div class="font-controls">
+			<CustomFonts />
+			<FontSize />
+		</div>
 		<CardContainer />
 	</main>
 </Base>

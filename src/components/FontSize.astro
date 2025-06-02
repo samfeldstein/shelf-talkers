@@ -1,0 +1,76 @@
+<div>
+  <button id="showFontSizeBtn">Change font size</button>
+
+  <div class="font-size" hidden>
+    <label for="font-size-input">Printed Font Size:</label>
+    <input type="number" id="font-size-input" step="0.5" min="1" />
+  </div>
+</div>
+
+<style>
+  div.font-size {
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+
+  input {
+    border: 2px solid #d9d9d9;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 80px;
+    text-align: center;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #666;
+      box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
+    }
+
+    &:hover {
+      border-color: #999;
+    }
+  }
+</style>
+
+<script>
+  const button = document.getElementById("showFontSizeBtn");
+  const fontSizeDiv = document.querySelector(".font-size");
+
+  button.addEventListener("click", () => {
+    fontSizeDiv.hidden = false;
+  });
+
+  const fontInput = document.getElementById("font-size-input");
+
+  function updateFontSize(fontSize) {
+    if (fontSize && fontSize > 0) {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card) => {
+        card.style.setProperty("--print-size", fontSize + "px");
+      });
+      // Save to localStorage
+      localStorage.setItem("cardFontSize", fontSize);
+    }
+  }
+
+  fontInput.addEventListener("input", () => {
+    updateFontSize(fontInput.value);
+  });
+
+  // Load saved value on page load
+  window.addEventListener("load", () => {
+    const savedSize = localStorage.getItem("cardFontSize");
+    if (savedSize) {
+      fontInput.value = savedSize;
+      updateFontSize(savedSize);
+    } else {
+      // Set from CSS if no saved value
+      const card = document.querySelector(".card");
+      const currentValue =
+        getComputedStyle(card).getPropertyValue("--print-size");
+      fontInput.value = parseFloat(currentValue);
+    }
+  });
+</script>

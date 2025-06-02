@@ -1,8 +1,4 @@
 .card {
-  --base-font: 13.5px;
-  --title-size: 1.5;
-  --letter-spacing: calc((var(--base-font) * 0.1));
-
   // Border
   border-width: 1px;
   border-style: solid;
@@ -21,14 +17,13 @@
   font-variant: small-caps;
   font-weight: 700;
   text-transform: lowercase;
-  letter-spacing: var(--letter-spacing);
+
 }
 
 .author {
   font-variant: small-caps;
   font-size: 1.25rem;
   text-transform: lowercase;
-  letter-spacing: var(--letter-spacing);
 }
 
 .blurb {
@@ -38,7 +33,6 @@
 .submitter {
   font-variant: small-caps;
   text-transform: lowercase;
-  letter-spacing: var(--letter-spacing);
 }
 
 // Screen-only styles
@@ -54,24 +48,36 @@
 // Print styles
 @media print {
   .card {
+    --print-size: 14px;
+    --title-size: 1.5;
+    --letter-spacing: calc((var(--print-size) * 0.1));
     // Layout
     height: 2.5in;
     width: 5in;
     overflow: hidden;
     padding: 10px;
     // Typography
-    font-size: var(--base-font);
+    font-size: var(--print-size);
+
+    .title {
+      letter-spacing: var(--letter-spacing);
+    }
 
     .author {
-      font-size: calc(var(--base-font) * 1.25);
+      font-size: calc(var(--print-size) * 1.25);
+      letter-spacing: var(--letter-spacing);
     }
 
     p {
-      margin: calc(var(--base-font) * 0.75) 0;
+      margin: calc(var(--print-size) * 0.75) 0;
+    }
+
+    .submitter {
+      letter-spacing: var(--letter-spacing);
     }
   }
 
   .title {
-    font-size: calc(var(--base-font) * var(--title-size));
+    font-size: calc(var(--print-size) * var(--title-size));
   }
 }
