@@ -1,11 +1,19 @@
-// Load saved data on page load
-window.addEventListener('load', () => {
-  const saved = localStorage.getItem('shelfTalkerData');
+function loadAllCards() {
+  const saved = localStorage.getItem('allShelfTalkerData');
   if (saved) {
-    const data = JSON.parse(saved);
-    document.querySelector('.title').textContent = data.title || '';
-    document.querySelector('.author').textContent = data.author || '';
-    document.querySelector('.blurb').textContent = data.blurb || '';
-    document.querySelector('.submitter').textContent = data.submitter || '';
+    const allData = JSON.parse(saved);
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card, index) => {
+      if (allData[index]) {
+        card.querySelector('.title').innerHTML = allData[index].title || '';
+        card.querySelector('.author').innerHTML = allData[index].author || '';
+        card.querySelector('.blurb').innerHTML = allData[index].blurb || '';
+        card.querySelector('.submitter').innerHTML = allData[index].submitter || '';
+      }
+    });
   }
-});
+}
+
+// Load on page load
+window.addEventListener('load', loadAllCards);

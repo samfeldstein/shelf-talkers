@@ -1,12 +1,16 @@
-// Save data when content changes
-document.querySelectorAll('[contenteditable="true"]').forEach(element => {
-  element.addEventListener('input', () => {
-    const data = {
-      title: document.querySelector('.title').textContent,
-      author: document.querySelector('.author').textContent,
-      blurb: document.querySelector('.blurb').textContent,
-      submitter: document.querySelector('.submitter').textContent
-    };
-    localStorage.setItem('shelfTalkerData', JSON.stringify(data));
-  });
+// Save and load all cards
+function saveAllCards() {
+  const cards = document.querySelectorAll('.card');
+  const allData = Array.from(cards).map((card, index) => ({
+    title: card.querySelector('.title').innerHTML,
+    author: card.querySelector('.author').innerHTML,
+    blurb: card.querySelector('.blurb').innerHTML,
+    submitter: card.querySelector('.submitter').innerHTML
+  }));
+  localStorage.setItem('allShelfTalkerData', JSON.stringify(allData));
+}
+
+// Save on any input
+document.querySelectorAll('[contenteditable]').forEach(element => {
+  element.addEventListener('input', saveAllCards);
 });
