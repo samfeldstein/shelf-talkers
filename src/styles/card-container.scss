@@ -1,6 +1,6 @@
 .card-container {
   display: grid;
-  // gap: 1rem;
+  gap: 1rem;
   // Center
   margin: 0 auto;
   width: 100%;
@@ -16,7 +16,7 @@
 
 @media print {
   .card-container {
-    // Two columns. Must set explicitly for some reason.
+    // Two columns. Doesn't adopt above @media rule for some reason
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }

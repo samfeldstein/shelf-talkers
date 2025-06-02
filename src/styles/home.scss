@@ -5,6 +5,12 @@
 // Print styles
 @media print {
 
+  body,
+  main,
+  .card-container {
+    margin: 0;
+  }
+
   header,
   footer,
   input,
@@ -15,5 +21,10 @@
 
   @page {
     size: landscape;
+    margin-top: 0.5in;
+    margin-bottom: 0;
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+    
   }
 }
