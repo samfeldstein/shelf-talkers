@@ -1,47 +1,32 @@
-<div>
-  <button id="showFontSizeBtn">Change font size</button>
+---
+import "../styles/font-size.scss";
+---
 
-  <div class="font-size" hidden>
-    <label for="font-size-input">Printed Font Size:</label>
+<div>
+  <button id="showFontSizeBtn">Change print font size</button>
+
+  <div id="fontSizeContainer" class="font-size hidden">
+    <label for="font-size-input">Enter font size:</label>
     <input type="number" id="font-size-input" step="0.5" min="1" />
+    <button id="hideFontSizeBtn">Done</button>
   </div>
 </div>
 
-<style>
-  div.font-size {
-    margin-bottom: 0.25rem;
-    text-align: center;
-  }
-
-  input {
-    border: 2px solid #d9d9d9;
-    border-radius: 0.25rem;
-    font-family: inherit;
-    font-size: 1rem;
-    width: 80px;
-    text-align: center;
-    transition: border-color 0.2s ease;
-
-    &:focus {
-      outline: none;
-      border-color: #666;
-      box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.1);
-    }
-
-    &:hover {
-      border-color: #999;
-    }
-  }
-</style>
-
 <script>
   const button = document.getElementById("showFontSizeBtn");
+  const hideButton = document.getElementById("hideFontSizeBtn");
   const fontSizeDiv = document.querySelector(".font-size");
 
   button.addEventListener("click", () => {
-    fontSizeDiv.hidden = false;
+    fontSizeDiv?.classList.remove("hidden");
+    fontInput?.focus();
   });
 
+  hideButton?.addEventListener("click", () => {
+    fontSizeDiv?.classList.add("hidden");
+  });
+
+  const container = document.getElementById("fontSizeContainer");
   const fontInput = document.getElementById("font-size-input");
 
   function updateFontSize(fontSize) {
@@ -57,6 +42,14 @@
 
   fontInput.addEventListener("input", () => {
     updateFontSize(fontInput.value);
+  });
+
+  // On Enter or blur, process the input
+  fontInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === "Escape") {
+      event.preventDefault();
+      container.classList.add("hidden");
+    }
   });
 
   // Load saved value on page load

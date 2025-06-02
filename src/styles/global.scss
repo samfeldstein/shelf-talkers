@@ -14,9 +14,9 @@ body {
 }
 
 h1 {
-  text-align: center;
   font-variant: small-caps;
-
+  text-transform: lowercase;
+  text-align: center;
 }
 
 a {
@@ -35,4 +35,8 @@ a {
 kbd {
   font-family: inherit;
   font-weight: 700;
+}
+
+.hidden {
+  display: none !important;
 }

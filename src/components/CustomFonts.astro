@@ -1,15 +1,41 @@
-<div hidden>
-  <label for="fontLinkInput"
-    >Paste your Google Fonts code below. For help, see <a href="/help#fonts"
-      >Adding fonts</a
-    >.</label
-  >
-  <textarea id="fontLinkInput" rows="3" cols="60"></textarea>
+<div>
+  <button id="showFontInput">Change font</button>
+  <div id="inputContainer" class="hidden">
+    <label for="fontLinkInput"
+      >Paste your Google Fonts code below. For help, see <a href="/help#fonts"
+        >Adding fonts</a
+      >.</label
+    >
+    <textarea id="fontLinkInput" rows="3" cols="60"></textarea>
+  </div>
 </div>
 
-<style>
+<style type="scss">
+  #inputContainer {
+    display: grid;
+    gap: 2rem;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center the modal */
+    z-index: 1000;
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 30rem;
+  }
+
   textarea {
     display: block;
+    width: 100%;
+  }
+
+  .hidden {
+    display: none !important;
   }
 </style>
 
@@ -26,26 +52,55 @@
     }
   });
 
+  // Get input container
+  const container = document.getElementById("inputContainer");
+
+  const button = document.getElementById("showFontInput");
+  button.addEventListener("click", () => {
+    container.classList.remove("hidden");
+    textarea.value = "";
+    textarea?.focus();
+  });
   // Get the textarea
   const textarea = document.getElementById("fontLinkInput");
 
   // On Enter or blur, process the input
   textarea.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.key === "Escape") {
       event.preventDefault();
       injectFontLink();
+      container?.classList.add("hidden");
     }
   });
-
-  textarea.addEventListener("blur", injectFontLink);
 
   // Function to inject the pasted <link> tag into <head>
   function injectFontLink() {
     const input = textarea.value.trim();
     if (!input) return;
 
-    injectFontLinkFromHTML(input);
-    localStorage.setItem("googleFontLink", input);
+    // Parse the textarea HTML as a document
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(input, "text/html");
+
+    // Find the first <link> with rel="stylesheet" and href containing fonts.googleapis.com
+    const fontLink = Array.from(
+      doc.querySelectorAll('link[rel="stylesheet"]'),
+    ).find((link) => link.href.includes("fonts.googleapis.com"));
+
+    if (!fontLink) return;
+
+    // Remove all existing <link> elements in <head>
+    const existingLinks = document.head.querySelectorAll("link");
+    existingLinks.forEach((link) => link.remove());
+
+    // Clone and insert only the valid font <link>
+    document.head.appendChild(fontLink.cloneNode(true));
+
+    // Save the cleaned-up HTML to localStorage
+    localStorage.setItem("googleFontLink", fontLink.outerHTML);
+
+    // Apply the font
+    injectFontLinkFromHTML(fontLink.outerHTML);
   }
 
   function injectFontLinkFromHTML(input) {
@@ -74,7 +129,7 @@
     const fontName = rawName.replace(/\+/g, " ");
 
     // Apply font
-    document.body.style.fontFamily = `'${fontName}', sans-serif`;
-    console.log(fontName);
+    document.getElementById("cardContainer").style.fontFamily =
+      `'${fontName}', sans-serif`;
   }
 </script>

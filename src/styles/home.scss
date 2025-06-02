@@ -3,10 +3,21 @@
 }
 
 .font-controls {
-  margin-bottom: 0.25rem;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  margin: 2rem auto;
   gap: 1rem;
+  max-width: 30rem;
+
+  button {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 // Print styles
@@ -32,6 +43,6 @@
     margin-bottom: 0;
     margin-left: 0.5in;
     margin-right: 0.5in;
-    
+
   }
 }
