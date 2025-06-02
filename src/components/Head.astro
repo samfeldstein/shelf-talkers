@@ -1,0 +1,16 @@
+---
+// Styles
+import "../styles/reset.scss";
+import "../styles/config.scss";
+import "../styles/global.scss";
+// Props
+const siteTitle = "Shelf Talker Generator";
+const { pageTitle } = Astro.props;
+---
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle} | {siteTitle}</title>
+</head>

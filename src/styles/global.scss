@@ -7,6 +7,12 @@ html {
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-body);
+
+  // Screen styles
+  @media screen {
+    margin: 0 auto;
+    padding: 1rem;
+  }
 }
 
 h1 {
@@ -15,38 +21,20 @@ h1 {
 
 }
 
+a {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
+  }
+}
+
 kbd {
   font-family: inherit;
   font-weight: 700;
-}
-
-.instructions {
-  text-align: center;
-}
-
-// Screen styles
-@media screen {
-  body {
-    margin: 0 auto;
-    padding: 1rem;
-  }
-}
-
-// Print styles
-@media print {
-
-  header,
-  .instructions {
-    display: none;
-  }
-
-  @page {
-    size: landscape;
-    // Setting by shorthand, didn't work, fyi
-    margin-top: 0.88in;
-    margin-bottom: 0in;
-    margin-left: 0.5in;
-    margin-right: 0.5in;
-    border: 1px solid black;
-  }
 }

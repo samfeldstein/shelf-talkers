@@ -1,33 +1,21 @@
 ---
+import Base from "../layouts/Base.astro";
 import CardContainer from "../components/CardContainer.astro";
-// Styles
-import "../styles/reset.scss";
-import "../styles/config.scss";
-import "../styles/global.scss";
-
-const siteTitle = "Shelf Talker Generator";
+import "../styles/home.scss";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{siteTitle}</title>
-	</head>
-	<body>
-		<header>
-			<h1>{siteTitle}</h1>
-		</header>
-		<main>
-			<p class="instructions">
-				Click any field to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd
-				> on Windows.
-			</p>
-			<CardContainer />
-		</main>
-	</body>
-</html>
-
+<Base pageTitle="Home">
+	<header>
+		<nav><a href="/help">Help</a></nav>
+		<h1>Shelf Talker Generator</h1>
+	</header>
+	<main>
+		<p class="instructions">
+			Click any field to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd>
+			on Windows. See the <a href="/help">Help page</a> for more.
+		</p>
+		<CardContainer />
+	</main>
+</Base>
 <script src="../scripts/load.js"></script>
 <script src="../scripts/save.js"></script>

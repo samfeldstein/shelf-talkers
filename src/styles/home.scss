@@ -1,0 +1,17 @@
+.instructions {
+  text-align: center;
+}
+
+// Print styles
+@media print {
+
+  header,
+  footer,
+  .instructions {
+    display: none;
+  }
+
+  @page {
+    size: landscape;
+  }
+}
