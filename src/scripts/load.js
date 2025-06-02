@@ -13,7 +13,16 @@ function loadAllCards() {
       }
     });
   }
+
+  // Convert markdown immediately after loading
+  document.querySelectorAll('[contenteditable]').forEach(element => {
+    element.innerHTML = element.innerHTML
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  });
 }
+
+
 
 // Load on page load
 window.addEventListener('load', loadAllCards);
