@@ -1,0 +1,44 @@
+<div>
+  <label for="fontLinkInput"
+    >Paste your Google Fonts code below. For help, see <a href="/help#fonts"
+      >Adding fonts</a
+    ></label
+  >
+  <textarea id="fontLinkInput" rows="3" cols="60"></textarea>
+</div>
+
+<script>
+  // Get the textarea
+  const textarea = document.getElementById("fontLinkInput");
+
+  // On Enter or blur, process the input
+  textarea.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      injectFontLink();
+    }
+  });
+
+  textarea.addEventListener("blur", injectFontLink);
+
+  // Function to inject the pasted <link> tag into <head>
+  function injectFontLink() {
+    const input = textarea.value.trim();
+
+    // Don't do anything if empty
+    if (!input) return;
+
+    // Remove existing Google Fonts links
+    const existing = document.head.querySelectorAll('link[rel="stylesheet"]');
+    for (const link of existing) {
+      if (link.href.includes("fonts.googleapis.com")) {
+        link.remove();
+      }
+    }
+
+    // Inject raw HTML string directly into <head>
+    document.head.insertAdjacentHTML("beforeend", input);
+    console.log(input);
+    
+  }
+</script>
