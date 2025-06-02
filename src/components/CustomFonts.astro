@@ -8,6 +8,18 @@
 </div>
 
 <script>
+  // Load saved fonts
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedFontLink = localStorage.getItem("googleFontLink");
+    if (savedFontLink) {
+      // Put it into the textarea for display
+      document.getElementById("fontLinkInput").value = savedFontLink;
+
+      // Inject it into the page
+      injectFontLinkFromHTML(savedFontLink);
+    }
+  });
+
   // Get the textarea
   const textarea = document.getElementById("fontLinkInput");
 
@@ -24,11 +36,16 @@
   // Function to inject the pasted <link> tag into <head>
   function injectFontLink() {
     const input = textarea.value.trim();
-
-    // Don't do anything if empty
     if (!input) return;
 
-    // Remove existing Google Fonts links
+    injectFontLinkFromHTML(input);
+    localStorage.setItem("googleFontLink", input);
+  }
+
+  function injectFontLinkFromHTML(input) {
+    if (!input) return;
+
+    // Remove old Google Fonts links
     const existing = document.head.querySelectorAll('link[rel="stylesheet"]');
     for (const link of existing) {
       if (link.href.includes("fonts.googleapis.com")) {
@@ -36,9 +53,22 @@
       }
     }
 
-    // Inject raw HTML string directly into <head>
+    // Insert new <link> tag
     document.head.insertAdjacentHTML("beforeend", input);
-    console.log(input);
-    
+
+    // Extract href
+    const hrefMatch = input.match(/href="([^"]+)"/);
+    if (!hrefMatch) return;
+
+    const href = hrefMatch[1];
+    const familyMatch = href.match(/family=([^:&"]+)/);
+    if (!familyMatch) return;
+
+    const rawName = familyMatch[1];
+    const fontName = rawName.replace(/\+/g, " ");
+
+    // Apply font
+    document.body.style.fontFamily = `'${fontName}', sans-serif`;
+    console.log(fontName);
   }
 </script>
