@@ -1,24 +1,35 @@
 ---
+// Components
+import { Image } from "astro:assets";
+
+// Styles
 import "../styles/card.scss";
 
+// Images
+import logo from "../images/compshop-logo.svg";
+
+// Props
 const { title, author, blurb, submitter } = Astro.props;
 ---
 
 <div class="card">
   <div class="card-header">
-    <!-- Using set:html gets around placeholder issue. If props in div body, placeholder's don't work. -->
-    <div
-      class="title"
-      contenteditable="true"
-      data-placeholder="Title"
-      set:html={title}
-    />
-    <div
-      class="author"
-      contenteditable="true"
-      data-placeholder="Author"
-      set:html={author}
-    />
+    <div class="title-author">
+      <!-- Using set:html gets around placeholder issue. If props in div body, placeholder's don't work. -->
+      <div
+        class="title"
+        contenteditable="true"
+        data-placeholder="Title"
+        set:html={title}
+      />
+      <div
+        class="author"
+        contenteditable="true"
+        data-placeholder="Author"
+        set:html={author}
+      />
+    </div>
+    <Image src={logo} alt="The composition shop logo." />
   </div>
   <p
     class="blurb"

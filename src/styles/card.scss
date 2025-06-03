@@ -1,5 +1,5 @@
 .card {
-  
+
   // Border
   border-width: 1px;
   border-style: solid;
@@ -11,6 +11,22 @@
   p {
     text-align: justify;
   }
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card-header img {
+  max-width: 60px;
+  height: auto;
+}
+
+.title-author {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .title {
