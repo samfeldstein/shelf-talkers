@@ -55,6 +55,10 @@
     max-width: 20rem;
   }
 
+  button {
+    width: 100%;
+  }
+
   .hidden {
     display: none;
   }
