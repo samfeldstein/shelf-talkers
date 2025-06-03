@@ -1,19 +1,14 @@
-<div>
-  <button id="showLogoInputBtn">Change Logo</button>
-  <div id="inputDiv" class="hidden">
-    <label for="logoUpload">Upload your logo:</label>
-    <input type="file" id="logoUpload" accept="image/*" />
-  </div>
-</div>
+---
+// Components
+import ControlBox from "./ControlBox.svelte";
+---
+
+<ControlBox client:only id="inputDiv" buttonLabel="Change logo">
+  <label for="logoUpload">Upload your logo:</label>
+  <input type="file" id="logoUpload" accept="image/*" />
+</ControlBox>
 
 <script>
-  const showButton = document.getElementById("showLogoInputBtn");
-  const inputDiv = document.getElementById("inputDiv");
-
-  showButton.addEventListener("click", () => {
-    inputDiv?.classList.remove("hidden");
-  });
-
   const input = document.getElementById("logoUpload");
   const logos = document.querySelectorAll(".logo");
 

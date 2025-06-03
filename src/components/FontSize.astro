@@ -1,69 +1,19 @@
 ---
+// Components
+import ControlBox from "./ControlBox.svelte";
+
+// Styles
 import "../styles/font-size.scss";
 ---
 
-<div>
-  <button id="showFontSizeBtn">Change font size</button>
-
-  <div id="fontSizeContainer" class="font-size hidden">
-    <label for="font-size-input">Enter font size below. Hit <kbd>CmdP/CtrlP</kbd> to preview.</label>
-    <input type="number" id="font-size-input" step="0.5" min="1" />
-    <button id="hideFontSizeBtn">Done</button>
-  </div>
-</div>
-
-<script>
-  const button = document.getElementById("showFontSizeBtn");
-  const hideButton = document.getElementById("hideFontSizeBtn");
-  const fontSizeDiv = document.querySelector(".font-size");
-
-  button.addEventListener("click", () => {
-    fontSizeDiv?.classList.remove("hidden");
-    fontInput?.focus();
-  });
-
-  hideButton?.addEventListener("click", () => {
-    fontSizeDiv?.classList.add("hidden");
-  });
-
-  const container = document.getElementById("fontSizeContainer");
-  const fontInput = document.getElementById("font-size-input");
-
-  function updateFontSize(fontSize) {
-    if (fontSize && fontSize > 0) {
-      const cards = document.querySelectorAll(".card");
-      cards.forEach((card) => {
-        card.style.setProperty("--print-size", fontSize + "px");
-      });
-      // Save to localStorage
-      localStorage.setItem("cardFontSize", fontSize);
-    }
-  }
-
-  fontInput.addEventListener("input", () => {
-    updateFontSize(fontInput.value);
-  });
-
-  // On Enter or blur, process the input
-  fontInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === "Escape") {
-      event.preventDefault();
-      container.classList.add("hidden");
-    }
-  });
-
-  // Load saved value on page load
-  window.addEventListener("load", () => {
-    const savedSize = localStorage.getItem("cardFontSize");
-    if (savedSize) {
-      fontInput.value = savedSize;
-      updateFontSize(savedSize);
-    } else {
-      // Set from CSS if no saved value
-      const card = document.querySelector(".card");
-      const currentValue =
-        getComputedStyle(card).getPropertyValue("--print-size");
-      fontInput.value = parseFloat(currentValue);
-    }
-  });
-</script>
+<ControlBox
+  client:only
+  id="fontSizeContainer"
+  buttonLabel="Change font size"
+>
+  <label for="font-size-input"
+    >Enter font size below. Hit <kbd>CmdP/CtrlP</kbd> to preview.</label
+  >
+  <input type="number" id="font-size-input" step="0.5" min="1" />
+  <button id="hideFontSizeBtn">Done</button>
+</ControlBox>

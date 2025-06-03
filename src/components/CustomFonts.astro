@@ -1,43 +1,15 @@
-<div>
-  <button id="showFontInput">Change font</button>
-  <div id="inputContainer" class="hidden">
-    <label for="fontLinkInput"
-      >Paste your Google Fonts code below. For help, see <a href="/help#fonts"
-        >Adding fonts</a
-      >.</label
-    >
-    <textarea id="fontLinkInput" rows="3" cols="60"></textarea>
-  </div>
-</div>
+---
+import ControlBox from "./ControlBox.svelte";
+---
 
-<style type="scss">
-  #inputContainer {
-    display: grid;
-    gap: 2rem;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* center the modal */
-    z-index: 1000;
-    background: white;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    padding: 1rem 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 30rem;
-  }
-
-  textarea {
-    display: block;
-    width: 100%;
-  }
-
-  .hidden {
-    display: none !important;
-  }
-</style>
+<ControlBox client:only id="inputContainer" buttonLabel="Change font">
+  <label for="fontLinkInput"
+    >Paste your Google Fonts code below. For help, see <a href="/help#fonts"
+      >Adding fonts</a
+    >.</label
+  >
+  <textarea id="fontLinkInput" rows="3" cols="60"></textarea>
+</ControlBox>
 
 <script>
   // Load saved fonts
@@ -55,12 +27,6 @@
   // Get input container
   const container = document.getElementById("inputContainer");
 
-  const button = document.getElementById("showFontInput");
-  button.addEventListener("click", () => {
-    container.classList.remove("hidden");
-    textarea.value = "";
-    textarea?.focus();
-  });
   // Get the textarea
   const textarea = document.getElementById("fontLinkInput");
 
