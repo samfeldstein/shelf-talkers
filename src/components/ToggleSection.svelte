@@ -33,8 +33,9 @@
 </button>
 
 {#if isVisible}
-  <div class="toggle-content" transition:fly={{ x: -200, duration: 300 }}>
+  <div class="toggle-content" transition:fly={{ y: -200, duration: 300 }}>
     <slot />
+    <button class="close-button" aria-label="Close" on:click={toggle}>×</button>
   </div>
 {/if}
 
@@ -51,5 +52,20 @@
     margin-top: -1px;
     display: grid;
     gap: 1rem;
+  }
+
+  .close-button {
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: #666;
+    padding: 0;
+  }
+
+  .close-button:hover {
+    color: #000;
   }
 </style>
