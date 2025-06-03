@@ -1,0 +1,20 @@
+<label for="logoUpload">Upload your logo:</label>
+<input type="file" id="logoUpload" accept="image/*" />
+
+<script>
+  const input = document.getElementById("logoUpload");
+  const logos = document.querySelectorAll(".logo");
+
+  input.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      logos.forEach((logo) => {
+        logo.src = e.target.result;
+      });
+    };
+    reader.readAsDataURL(file);
+  });
+</script>
