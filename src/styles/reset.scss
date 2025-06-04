@@ -33,11 +33,10 @@ strong {
   font-weight: bolder;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+// Inherit fonts
 button,
 textarea,
-select {
+input {
   font: inherit;
 }
 

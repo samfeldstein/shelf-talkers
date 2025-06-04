@@ -2,7 +2,11 @@
 import OptionsBox from "./OptionsBox.astro";
 ---
 
-<OptionsBox id="customFont" buttonLabel="Change font">
+<OptionsBox
+  buttonId="customFontBtn"
+  divId="customFontDiv"
+  buttonLabel="Change font"
+>
   <label for="fontLinkInput">
     Paste your Google Fonts code below. For help, see
     <a href="/help#fonts">Adding fonts</a>.
@@ -13,26 +17,32 @@ import OptionsBox from "./OptionsBox.astro";
     cols="60"
     placeholder='<link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet">'
   ></textarea>
+  <button class="done">Done</button>
 </OptionsBox>
 
-<!-- <script is:inline>
+<script>
+  // Inject font
   function injectFont(href) {
+    // Remove existing font links
     document.querySelectorAll('link[rel="stylesheet"]').forEach((l) => {
       if (l.href.includes("fonts.googleapis.com")) l.remove();
     });
 
+    // If link already exists, do nothing
     if (document.querySelector(`link[href="${href}"]`)) return;
 
+    // Build the <link> element and put it in the <head>
     const linkEl = document.createElement("link");
     linkEl.rel = "stylesheet";
     linkEl.href = href;
     document.head.appendChild(linkEl);
 
+    // Apply font to cards
     const match = href.match(/family=([^:&"]+)/);
     if (!match) return;
     const fontName = match[1].split(":")[0].replace(/\+/g, " ");
     const container = document.getElementById("cardContainer");
-    if (container) container.style.fontFamily = `'${fontName}', sans-serif`;
+    if (container) container.style.fontFamily = `'${fontName}', serif`;
   }
 
   function processFontInput() {
@@ -51,8 +61,10 @@ import OptionsBox from "./OptionsBox.astro";
     const href = link.href;
     localStorage.setItem("googleFontLink", href);
     injectFont(href);
+    textareaEl.value = "";
   }
 
+  // Load font
   document.addEventListener("DOMContentLoaded", () => {
     const saved = localStorage.getItem("googleFontLink");
     if (saved) injectFont(saved);
@@ -66,5 +78,15 @@ import OptionsBox from "./OptionsBox.astro";
         }
       });
     }
+
+    // Handle Done button click
+    const doneButton = document.querySelector(".done");
+    if (doneButton) {
+      doneButton.addEventListener("click", () => {
+        processFontInput();
+        const box = doneButton.closest(".options-box");
+        if (box) box.classList.add("hidden");
+      });
+    }
   });
-</script> -->
+</script>

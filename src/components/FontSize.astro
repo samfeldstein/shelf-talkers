@@ -1,19 +1,14 @@
 ---
-// Components
-import ControlBox from "./ControlBox.svelte";
-
-// Styles
-import "../styles/font-size.scss";
+import OptionsBox from "./OptionsBox.astro";
 ---
 
-<ControlBox
-  client:only
-  id="fontSizeContainer"
+<OptionsBox
+  buttonId="fontSizeButton"
   buttonLabel="Change font size"
+  divId="fontSizeDiv"
 >
   <label for="font-size-input"
     >Enter font size below. Hit <kbd>CmdP/CtrlP</kbd> to preview.</label
   >
   <input type="number" id="font-size-input" step="0.5" min="1" />
-  <button id="hideFontSizeBtn">Done</button>
-</ControlBox>
+</OptionsBox>

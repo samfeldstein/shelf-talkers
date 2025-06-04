@@ -1,14 +1,18 @@
 ---
 // Components
-import ControlBox from "./ControlBox.svelte";
+import OptionsBox from "./OptionsBox.astro";
 ---
 
-<ControlBox client:only id="inputDiv" buttonLabel="Change logo">
+<OptionsBox
+  buttonId="changeLogoButton"
+  buttonLabel="Change logo"
+  divId="changeLogoDiv"
+>
   <label for="logoUpload">Upload your logo:</label>
   <input type="file" id="logoUpload" accept="image/*" />
-</ControlBox>
+</OptionsBox>
 
-<script>
+<!-- <script>
   const input = document.getElementById("logoUpload");
   const logos = document.querySelectorAll(".logo");
 
@@ -39,4 +43,4 @@ import ControlBox from "./ControlBox.svelte";
     };
     reader.readAsDataURL(file);
   });
-</script>
+</script> -->

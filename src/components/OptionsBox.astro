@@ -1,12 +1,44 @@
 ---
-import "../styles/options-box.scss";
-
-// Props
-const { id, buttonLabel } = Astro.props;
+const { buttonId, divId, buttonLabel } = Astro.props;
 ---
 
-<button>{buttonLabel}</button>
+<button id={buttonId} data-button-id={buttonId} data-div-id={divId}>
+  {buttonLabel}
+</button>
 
-<div id={id} class="options-box hidden">
+<div id={divId} data-div-id={divId} class="options-box hidden">
   <slot />
 </div>
+
+<script>
+  // Get show button and div from each OptionsBox instance
+  document.querySelectorAll("[data-button-id]").forEach((button) => {
+    const divId = button.dataset.divId;
+    const target = document.getElementById(divId);
+
+    // Show div on click
+    button.addEventListener("click", () => {
+      target.classList.remove("hidden");
+    });
+  });
+
+  // Close box on escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".options-box:not(.hidden)").forEach((box) => {
+        // Exclude options parent div
+        if (box.id !== "optionsDiv") {
+          box.classList.add("hidden");
+        }
+      });
+    }
+  });
+
+  // Handle close buttons
+  document.querySelectorAll("[data-close-button]").forEach((closeButton) => {
+    closeButton.addEventListener("click", () => {
+      const box = closeButton.closest(".options-box");
+      box.classList.add("hidden");
+    });
+  });
+</script>
