@@ -1,22 +1,25 @@
-.instructions {
-  text-align: center;
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.font-controls {
-  display: grid;
-  margin: 2rem auto;
-  gap: 1rem;
-  max-width: 30rem;
+.instructions {
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
-  button {
-    width: 100%;
-    padding: 0.5rem 0;
-    font-variant: small-caps;
-    text-transform: lowercase;
-  }
+button {
+  padding: 0.25rem 0.75rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+  // Style as link
+  &.a {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
   }
 }
 
@@ -31,9 +34,7 @@
 
   header,
   footer,
-  input,
-  .instructions,
-  .font-controls {
+  .instructions {
     display: none;
   }
 
@@ -43,6 +44,5 @@
     margin-bottom: 0;
     margin-left: 0.5in;
     margin-right: 0.5in;
-
   }
 }

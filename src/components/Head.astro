@@ -5,16 +5,12 @@ import "../styles/config.scss";
 import "../styles/global.scss";
 // Props
 const siteTitle = "Shelf Talker Generator";
-const { pageTitle } = Astro.props;
+const { pageTitle, script } = Astro.props;
 ---
 
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -23,4 +19,5 @@ const { pageTitle } = Astro.props;
   />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle} | {siteTitle}</title>
+  {script && <script type="module" src={script} />}
 </head>

@@ -1,0 +1,22 @@
+// All boxes in options parent
+.options-box {
+  // Float
+  position: fixed;
+  top: -1px;
+  left: -1px;
+
+  // Appearance
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  // Layout
+  display: grid;
+  gap: 1rem;
+
+  // Transition
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,20 @@
+---
+// Components
+import CustomFont from "./CustomFont.astro";
+import FontSize from "./FontSize.astro";
+import LogoInput from "./LogoInput.astro";
+
+// Styles
+import "../styles/options.scss";
+---
+
+<button id="showOptionsButton" class="a">Options</button>
+
+<div id="optionsDiv" class="options-box hidden">
+  <CustomFont />
+  <!-- <FontSize />
+  <LogoInput /> -->
+  <button id="closeOptionsButton" class="close">x</button>
+</div>
+
+<script src="../scripts/options.js"></script>

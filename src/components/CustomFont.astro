@@ -1,0 +1,70 @@
+---
+import OptionsBox from "./OptionsBox.astro";
+---
+
+<OptionsBox id="customFont" buttonLabel="Change font">
+  <label for="fontLinkInput">
+    Paste your Google Fonts code below. For help, see
+    <a href="/help#fonts">Adding fonts</a>.
+  </label>
+  <textarea
+    id="fontLinkInput"
+    rows="3"
+    cols="60"
+    placeholder='<link href="https://fonts.googleapis.com/css2?family=..." rel="stylesheet">'
+  ></textarea>
+</OptionsBox>
+
+<!-- <script is:inline>
+  function injectFont(href) {
+    document.querySelectorAll('link[rel="stylesheet"]').forEach((l) => {
+      if (l.href.includes("fonts.googleapis.com")) l.remove();
+    });
+
+    if (document.querySelector(`link[href="${href}"]`)) return;
+
+    const linkEl = document.createElement("link");
+    linkEl.rel = "stylesheet";
+    linkEl.href = href;
+    document.head.appendChild(linkEl);
+
+    const match = href.match(/family=([^:&"]+)/);
+    if (!match) return;
+    const fontName = match[1].split(":")[0].replace(/\+/g, " ");
+    const container = document.getElementById("cardContainer");
+    if (container) container.style.fontFamily = `'${fontName}', sans-serif`;
+  }
+
+  function processFontInput() {
+    const textareaEl = document.getElementById("fontLinkInput");
+    if (!textareaEl) return;
+
+    const raw = textareaEl.value.trim();
+    if (!raw) return;
+
+    const doc = new DOMParser().parseFromString(raw, "text/html");
+    const link = doc.querySelector(
+      'link[rel="stylesheet"][href*="fonts.googleapis.com"]',
+    );
+    if (!link) return;
+
+    const href = link.href;
+    localStorage.setItem("googleFontLink", href);
+    injectFont(href);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("googleFontLink");
+    if (saved) injectFont(saved);
+
+    const textarea = document.getElementById("fontLinkInput");
+    if (textarea) {
+      textarea.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === "Escape") {
+          e.preventDefault();
+          processFontInput();
+        }
+      });
+    }
+  });
+</script> -->

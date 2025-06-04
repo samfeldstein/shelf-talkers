@@ -1,0 +1,12 @@
+---
+import "../styles/options-box.scss";
+
+// Props
+const { id, buttonLabel } = Astro.props;
+---
+
+<button>{buttonLabel}</button>
+
+<div id={id} class="options-box hidden">
+  <slot />
+</div>

@@ -3,10 +3,8 @@
 import Base from "../layouts/Base.astro";
 
 // Components
-import CustomFonts from "../components/CustomFonts.astro";
-import FontSize from "../components/FontSize.astro";
 import CardContainer from "../components/CardContainer.astro";
-import LogoInput from "../components/LogoInput.astro";
+import Options from "../components/Options.astro";
 
 // Styles
 import "../styles/home.scss";
@@ -14,7 +12,12 @@ import "../styles/home.scss";
 
 <Base pageTitle="Home">
 	<header>
-		<nav><a href="/help">Help</a></nav>
+		<div class="menu">
+			<nav>
+				<a href="/help">Help</a>
+			</nav>
+			<Options />
+		</div>
 		<h1>Shelf Talker Generator</h1>
 	</header>
 	<main>
@@ -22,15 +25,6 @@ import "../styles/home.scss";
 			Click any field to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd>
 			on Windows.
 		</p>
-
-		<div class="font-controls">
-			<CustomFonts />
-			<FontSize />
-			<LogoInput />
-		</div>
-		<CardContainer />
 	</main>
+	<CardContainer />
 </Base>
-<script src="../scripts/load.js"></script>
-<script src="../scripts/save.js"></script>
-<script src="../scripts/markdown.js"></script>
