@@ -21,6 +21,13 @@ import OptionsBox from "./OptionsBox.astro";
 </OptionsBox>
 
 <script>
+  // Focus textarea
+  const showButton = document.getElementById("customFontBtn");
+  showButton?.addEventListener("click", () => {
+    const textarea = document.getElementById("fontLinkInput");
+    textarea?.focus();
+  });
+
   // Inject font
   function injectFont(href) {
     // Remove existing font links
