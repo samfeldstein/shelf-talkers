@@ -34,11 +34,11 @@ const { buttonId, divId, buttonLabel } = Astro.props;
     }
   });
 
-  // Handle close buttons
-  document.querySelectorAll("[data-close-button]").forEach((closeButton) => {
-    closeButton.addEventListener("click", () => {
-      const box = closeButton.closest(".options-box");
-      box.classList.add("hidden");
+  // Handle done buttons
+  document.querySelectorAll(".done").forEach((doneButton) => {
+    doneButton.addEventListener("click", () => {
+      const box = doneButton.closest(".options-box");
+      if (box) box.classList.add("hidden");
     });
   });
 </script>
