@@ -21,6 +21,10 @@
 
 img.logo {
   max-width: 50px;
+
+  &.hidden {
+    display: none;
+  }
 }
 
 .title-author {

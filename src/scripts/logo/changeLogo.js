@@ -9,12 +9,16 @@ export default function changeLogo() {
 
     const reader = new FileReader();
     reader.onload = (e) => {
+
+
       const dataURL = e.target.result;
 
       apply(dataURL);
 
       // Save to localStorage
       localStorage.setItem("userLogo", dataURL);
+      localStorage.setItem("logosHidden", "false");
+      document.querySelectorAll(".logo").forEach((logo) => logo.classList.remove("hidden"));
     };
     reader.readAsDataURL(file);
     closeOptions();
