@@ -3,24 +3,37 @@ import Base from "../layouts/Base.astro";
 import "../styles/help.scss";
 ---
 
-<Base pageTitle="Help">
+<Base pageTitle="Help" prefetch="">
   <header>
     <nav><a href="/">Home</a></nav>
     <h1>Help</h1>
   </header>
   <main>
-    <p>
-      <strong
-        >Card sizes on the webpage do not correlate to card sizes on the printed
-        page.</strong
-      > That's because the card sizes on the webpage morph to fit different screens.
-      Make sure you preview the printed page before you print.
-    </p>
-    <p>
-      If you have questions, email me at <a href="mailto:sam@samfeldstein.xyz"
-        >sam@samfeldstein.xyz</a
-      >.
-    </p>
+    <section>
+      <h2 id="basics">Basic usage</h2>
+      <p>
+        Just click on any of the fields to edit. <kbd>CmdP</kbd> to print on Mac.
+        <kbd>CtrlP</kbd> on Windows.
+      </p>
+
+      <p>
+        <strong
+          >Card sizes on the webpage do not correlate to card sizes on the
+          printed page.</strong
+        > That's because the card sizes on the webpage morph to fit different screens.
+        Make sure you preview the printed page before you print.
+      </p>
+      <p>
+        Any changes you make are stored automatically in the browser, so you can pick up where you left
+        off. Nobody can see your data except you.
+      </p>
+
+      <p>
+        If you have questions, email me at <a href="mailto:sam@samfeldstein.xyz"
+          >sam@samfeldstein.xyz</a
+        >.
+      </p>
+    </section>
 
     <section>
       <h2 id="changeFont">Change font</h2>
@@ -71,6 +84,11 @@ import "../styles/help.scss";
         Try to keep the image less than 70px tall. Anything bigger will push the
         text down.
       </p>
+    </section>
+
+    <section>
+      <h2 id="privacy">Privacy</h2>
+      <p>Your data is stored in your browser. Nobody can see it except you.</p>
     </section>
   </main>
 </Base>

@@ -4,7 +4,7 @@ import "../styles/config.scss";
 import "../styles/global.scss";
 // Props
 const siteTitle = "Shelf Talker Generator";
-const { pageTitle, script } = Astro.props;
+const { pageTitle, script, prefetch } = Astro.props;
 ---
 
 <head>
@@ -12,7 +12,33 @@ const { pageTitle, script } = Astro.props;
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="preload"
+    href="/fonts/subset-CMUSerif-Roman.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/subset-CMUSerif-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/subset-CMUSerif-Italic.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link rel="prefetch" href=`/${prefetch}` />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A simple app for generating shelf talkers."
+  />
   <title>{pageTitle} | {siteTitle}</title>
   {script && <script type="module" src={script} />}
 </head>
