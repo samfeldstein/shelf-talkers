@@ -1,4 +1,4 @@
-import close from "../close";
+import close from "../utils/close";
 
 export default function changeLogo() {
   const input = document.getElementById("logoUpload");

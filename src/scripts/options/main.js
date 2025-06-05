@@ -1,5 +1,5 @@
-import close from "../close";
-import open from "../open";
+import close from "../utils/close";
+import open from "../utils/open";
 
 // Get menu
 const optionsMenu = document.getElementById("optionsDiv")

@@ -1,6 +1,6 @@
 import processFontInput from "./processFontInput";
 import injectFont from "./injectFont";
-import close from "./close";
+import close from "../utils/close";
 
 export default function loadFont() {
   // Load font

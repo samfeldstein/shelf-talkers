@@ -20,7 +20,8 @@
 }
 
 img.logo {
-  max-width: 50px;
+  max-height: 70px;
+  width: auto;
 
   &.hidden {
     display: none;
@@ -57,6 +58,7 @@ img.logo {
 
 // Screen-only styles
 @media screen {
+
   // Add placeholder to blank fields
   [contenteditable]:empty::before {
     content: attr(data-placeholder);
