@@ -1,6 +1,9 @@
 ---
 // Components
 import OptionsBox from "./OptionsBox.astro";
+
+// Styles
+import "../styles/logo-input.scss";
 ---
 
 <OptionsBox
@@ -8,39 +11,8 @@ import OptionsBox from "./OptionsBox.astro";
   buttonLabel="Change logo"
   divId="changeLogoDiv"
 >
-  <label for="logoUpload">Upload your logo:</label>
-  <input type="file" id="logoUpload" accept="image/*" />
+  <input type="file" id="logoUpload" accept="image/*" hidden />
+  <label for="logoUpload" class="button">Choose image file</label>
 </OptionsBox>
 
-<!-- <script>
-  const input = document.getElementById("logoUpload");
-  const logos = document.querySelectorAll(".logo");
-
-  // Load saved logo on page load
-  const savedLogo = localStorage.getItem("userLogo");
-  if (savedLogo) {
-    logos.forEach((logo) => {
-      logo.src = savedLogo;
-    });
-  }
-
-  // Handle uploads
-  input.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const dataURL = e.target.result;
-
-      // Save to localStorage
-      localStorage.setItem("userLogo", dataURL);
-
-      // Apply to all logo elements
-      logos.forEach((logo) => {
-        logo.src = dataURL;
-      });
-    };
-    reader.readAsDataURL(file);
-  });
-</script> -->
+<script src="../scripts/logo/main.js"></script>
