@@ -1,0 +1,1 @@
+import{c as n}from"./close.CWIPe0ww.js";import{o as e}from"./open.CYkFHZF3.js";const t=document.getElementById("optionsDiv");s();c();function c(){document.getElementById("closeOptionsButton").addEventListener("click",()=>{n(t)})}function s(){document.getElementById("showOptionsButton").addEventListener("click",()=>{e(t)})}

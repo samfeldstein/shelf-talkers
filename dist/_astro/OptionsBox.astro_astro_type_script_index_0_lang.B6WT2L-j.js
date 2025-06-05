@@ -1,0 +1,1 @@
+import{o as c}from"./open.CYkFHZF3.js";import{c as d}from"./close.CWIPe0ww.js";document.querySelectorAll("[data-button-id]").forEach(e=>{const o=e.dataset.divId,t=document.getElementById(o);e.addEventListener("click",()=>{c(t)})});document.querySelectorAll(".done").forEach(e=>{e.addEventListener("click",()=>{const o=e.closest(".options-box");d(o)})});
