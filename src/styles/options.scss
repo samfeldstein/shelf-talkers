@@ -61,7 +61,9 @@ button.done {
 }
 
 .hidden {
-  opacity: 0 !important;
-  transform: translateY(-1000px) !important;
-  pointer-events: none !important;
+  opacity: 0;
+  transform: translateY(-1000px);
+  // Remove from accessibility tree
+  visibility: hidden;
+  pointer-events: none;
 }

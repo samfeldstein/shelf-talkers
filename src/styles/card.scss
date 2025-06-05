@@ -57,6 +57,7 @@ img.logo {
 
 // Screen-only styles
 @media screen {
+  // Add placeholder to blank fields
   [contenteditable]:empty::before {
     content: attr(data-placeholder);
     color: #888;
@@ -68,7 +69,7 @@ img.logo {
 // Print styles
 @media print {
   .card {
-    --print-size: 15.25px;
+    --print-size: 15px;
     --title-size: 1.5;
     --letter-spacing: calc((var(--print-size) * 0.1));
     // Layout

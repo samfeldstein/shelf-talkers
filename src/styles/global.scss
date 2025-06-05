@@ -18,9 +18,12 @@ body {
 
 h1 {
   font-variant: small-caps;
+  font-weight: 700;
+  font-size: 2.5rem;
   text-transform: lowercase;
   text-align: center;
-  font-weight: 500;
+
+  letter-spacing: 0.075em;
 }
 
 h2 {
@@ -32,10 +35,12 @@ h2 {
   padding-top: 0.25rem;
 }
 
-a, .a{
+a,
+.a {
   font-variant: small-caps;
   text-transform: lowercase;
   text-decoration: none;
+  letter-spacing: 0.07em;
   color: inherit;
 
   &:hover,
