@@ -12,4 +12,6 @@ export default function toggleLogo() {
 
   // Save the new state
   localStorage.setItem("logosHidden", (!currentlyHidden).toString());
+  console.log("Hello?");
+  
 }

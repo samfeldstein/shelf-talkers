@@ -1,24 +1,31 @@
-import close from "./closeOptionsBox";
 import processFontInput from "./processFontInput";
 import injectFont from "./injectFont";
+import hide from "./hide";
 
 export default function loadFont() {
   // Load font
+  loadSavedFont()
+  changeFont()
+}
+
+function loadSavedFont() {
   document.addEventListener("DOMContentLoaded", () => {
     const saved = localStorage.getItem("googleFontLink");
     if (saved) injectFont(saved);
+  })
+}
 
-    const textarea = document.getElementById("fontLinkInput");
-    if (textarea) {
-      textarea.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          processFontInput();
-          close(textarea);
-          const optionsDiv = document.querySelector("#optionsDiv");
-          close(optionsDiv);
-        }
-      });
+function changeFont() {
+  const textarea = document.getElementById("fontLinkInput");
+  textarea.addEventListener("keydown", (e) => {
+    // On enter...
+    if (e.key === "Enter") {
+      e.preventDefault();
+      processFontInput();
+
+      // Close
+      const optionsDiv = document.querySelector("#optionsDiv");
+      hide(optionsDiv);
     }
-  });
+  })
 }
