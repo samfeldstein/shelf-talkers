@@ -1,24 +1,22 @@
 import loadLogo from "./loadLogo";
 import changeLogo from "./changeLogo";
 import closeOptions from "../closeOptions";
-import deleteLogo from "./deleteLogo";
-import showLogo from "./showLogo";
+import toggleLogo from "./toggleLogo";
 
 const closeButton = document.getElementById("closeLogoBtn");
-const deleteButton = document.getElementById("deleteLogo");
-const showButton = document.getElementById("showLogo");
+const toggleButton = document.getElementById("toggleLogo");
 
 loadLogo();
 changeLogo();
 closeOptions(closeButton);
 
-deleteButton.addEventListener("click", deleteLogo);
-showButton.addEventListener("click", showLogo);
+toggleButton.addEventListener("click", toggleLogo);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const logosHidden = localStorage.getItem("logosHidden") === "true";
+  const isHidden = localStorage.getItem("logosHidden") === "true";
 
-  if (logosHidden) {
-    document.querySelectorAll(".logo").forEach((logo) => logo.remove());
-  }
+  document.querySelectorAll(".logo").forEach((logo) => {
+    logo.hidden = isHidden;
+  });
 });
+
