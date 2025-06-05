@@ -9,33 +9,52 @@ import "../styles/help.scss";
     <h1>Help</h1>
   </header>
   <main>
-    <p>
-      Hi, I'm <a href="https://samfeldstein.xyz"
-        ><strong>Sam Feldstein</strong></a
-      >. I'm a bookseller at <a href="https://compositionshop.com/">
-        Composition shop</a
-      > in Longmont, CO. I built this app because making shelf talkers is a bit of
-      a pain, especially if you're doing it with a word processor. I wanted to build
-      something that was somewhat customizable but easy to use.
-    </p>
+    <details class="toc">
+      <summary>Contents</summary>
+      <nav class="toc">
+        <a href="#basics">Basic Usage</a>
+        <a href="#print">Print</a>
+        <a href="#changeFont">Change font</a>
+        <a href="#logo">Change logo</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </details>
 
-    <p>
-      The code is <a href="https://github.com/samfeldstein/shelf-talkers"
-        >open source</a
-      >, and pull requests are welcome. You can also fork it and build your own
-      version.
-    </p>
+    <section>
+      <p>
+        Hi, I'm <a href="https://samfeldstein.xyz"
+          ><strong>Sam Feldstein</strong></a
+        >. I'm a bookseller at <a href="https://compositionshop.com/">
+          Composition shop</a
+        > in Longmont, CO. I built this app because making shelf talkers is a bit
+        of a pain, especially if you're doing it with a word processor. I wanted
+        to build something that was somewhat customizable but easy to use.
+      </p>
 
-    <p>
-      It should be pretty straightforward, but if you have any questions, you
-      can email me at <a href="mailto:sam@samfeldstein.xyz"
-        >sam@samfeldstein.xyz</a
-      >.
-    </p>
+      <p>
+        The code is <a href="https://github.com/samfeldstein/shelf-talkers"
+          >open source</a
+        >, and pull requests are welcome. You can also fork it and build your
+        own version.
+      </p>
+
+      <p>
+        Using the app should be pretty straightforward, but if you have
+        questions, you can email me at <a href="mailto:sam@samfeldstein.xyz"
+          >sam@samfeldstein.xyz</a
+        >.
+      </p>
+    </section>
+
     <section>
       <h2 id="basics">Basic usage</h2>
       <p>
-        Just click on any of the fields to edit. <kbd>CmdP</kbd> to print on Mac.
+        This app is best used on a desktop, but it should work fine on your
+        smartphone.
+      </p>
+
+      <p>
+        Click any field to edit. <kbd>CmdP</kbd> to print on Mac.
         <kbd>CtrlP</kbd> on Windows.
       </p>
 
@@ -48,8 +67,19 @@ import "../styles/help.scss";
       </p>
       <p>
         Any changes you make are stored automatically in the browser, so you can
-        pick up where you left off. Nobody can see your data except you.
+        pick up where you left off.
       </p>
+    </section>
+
+    <section>
+      <h2 id="print">Print</h2>
+      <ul>
+        <li>
+          Hit <kbd>CmdP</kbd> to print on a Mac, <kbd>CtrlP</kbd> on Windows
+        </li>
+        <li>Change the orientation to <strong>Landscape</strong></li>
+        <li>Hide headers and footers, if the option exists</li>
+      </ul>
     </section>
 
     <section>
@@ -73,20 +103,20 @@ import "../styles/help.scss";
         <li>Paste the code inside the text box</li>
         <li>Hit <kbd>Enter</kbd></li>
       </ul>
-    </section>
 
-    <section>
-      <h2 id="fontSize">Change font size</h2>
-      <ul>
-        <li>Click <strong>Options, Change font size</strong></li>
-        <li>Enter a number (units are pixels)</li>
-        <li>Hit <strong>Enter</strong></li>
-      </ul>
+      <section>
+        <h3 id="fontSize">Change font size</h3>
+        <ul>
+          <li>Click <strong>Options, Change font size</strong></li>
+          <li>Enter a number (units are pixels)</li>
+          <li>Hit <strong>Enter</strong></li>
+        </ul>
 
-      <p>
-        This does not affect the font size of the webpage. Only of the print
-        page.
-      </p>
+        <p>
+          This does not affect the font size of the webpage. Only of the print
+          page.
+        </p>
+      </section>
     </section>
 
     <section>

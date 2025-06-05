@@ -6,3 +6,33 @@ main {
 h2 {
   margin-top: 4rem;
 }
+
+h3 {
+  font-variant: small-caps;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-top: 4rem;
+}
+
+details.toc {
+  border-style: solid;
+  border-color: var(--accent);
+  border-width: 1px;
+
+  summary {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    padding: 0.5em;
+  }
+}
+
+nav.toc {
+  display: grid;
+  gap: 1em;
+  
+  margin: 0.5em;
+  border-top-style: solid;
+  border-top-width: 0.5px;
+  border-top-color: #999;
+  padding-top: 1em;
+}
