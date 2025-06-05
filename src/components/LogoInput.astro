@@ -1,9 +1,6 @@
 ---
 // Components
 import OptionsBox from "./OptionsBox.astro";
-
-// Styles
-import "../styles/logo-input.scss";
 ---
 
 <OptionsBox
@@ -11,8 +8,13 @@ import "../styles/logo-input.scss";
   buttonLabel="Change logo"
   divId="changeLogoDiv"
 >
-  <input type="file" id="logoUpload" accept="image/*" hidden />
-  <label for="logoUpload" class="button">Choose image file</label>
+  <div>
+    <p>Upload your image file. Must not be taller than 70px.</p>
+    <input type="file" id="logoUpload" accept="image/*" hidden />
+    <label for="logoUpload" class="button">Choose image file</label>
+  </div>
+
+  <button class="done">Done</button>
 </OptionsBox>
 
 <script src="../scripts/logo/main.js"></script>

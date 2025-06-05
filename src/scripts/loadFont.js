@@ -11,10 +11,12 @@ export default function loadFont() {
     const textarea = document.getElementById("fontLinkInput");
     if (textarea) {
       textarea.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === "Escape") {
+        if (e.key === "Enter") {
           e.preventDefault();
           processFontInput();
           close(textarea);
+          const optionsDiv = document.querySelector("#optionsDiv");
+          close(optionsDiv);
         }
       });
     }

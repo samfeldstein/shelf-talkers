@@ -7,10 +7,12 @@ import OptionsBox from "./OptionsBox.astro";
   buttonLabel="Change font size"
   divId="fontSizeDiv"
 >
-  <label for="font-size-input"
-    >Enter font size below. Hit <kbd>CmdP/CtrlP</kbd> to preview.</label
-  >
-  <input type="number" id="font-size-input" step="0.5" min="1" />
+  <div>
+    <label for="font-size-input"
+      >Enter font size below. Hit <kbd>CmdP/CtrlP</kbd> to preview.</label
+    >
+    <input type="number" id="font-size-input" step="0.5" min="1" />
+  </div>
   <button class="done">Done</button>
 </OptionsBox>
 

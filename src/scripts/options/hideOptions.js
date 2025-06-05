@@ -8,10 +8,14 @@ export default function hideOptions() {
 }
 
 function hide() {
-
   // Get options div
   const optionsDiv = document.getElementById("optionsDiv");
 
   // Hide div
   optionsDiv.classList.add("hidden");
+}
+
+function visibleBoxes() {
+  const anyVisible = document.querySelector(".options-box:not(.hidden)") !== null;
+  return anyVisible;
 }

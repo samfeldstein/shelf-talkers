@@ -22,18 +22,6 @@ const { buttonId, divId, buttonLabel } = Astro.props;
     });
   });
 
-  // Close box on escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      document.querySelectorAll(".options-box:not(.hidden)").forEach((box) => {
-        // Exclude options parent div
-        if (box.id !== "optionsDiv") {
-          box.classList.add("hidden");
-        }
-      });
-    }
-  });
-
   // Handle done buttons
   document.querySelectorAll(".done").forEach((doneButton) => {
     doneButton.addEventListener("click", () => {
