@@ -62,7 +62,7 @@ img.logo {
   // Add placeholder to blank fields
   [contenteditable]:empty::before {
     content: attr(data-placeholder);
-    color: #888;
+    color: #757575;
     pointer-events: none;
     display: block;
   }
