@@ -43,10 +43,10 @@ a,
   letter-spacing: 0.07em;
   color: inherit;
 
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
     text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
   }
 }
 
