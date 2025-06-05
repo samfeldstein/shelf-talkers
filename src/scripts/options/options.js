@@ -1,12 +1,26 @@
-import hide from "../hide";
-import showOptions from "./showOptions";
+import close from "../close";
+import open from "../open";
 
-// Handle close button
-const closeButton = document.getElementById("closeOptionsButton")
+// Get menu
+const optionsMenu = document.getElementById("optionsDiv")
 
-closeButton.addEventListener("click", () => {
-  const optionsMenu = document.getElementById("optionsDiv")
-  hide(optionsMenu)
-})
+// Open/close 
+openMenu()
+closeMenu()
 
-showOptions()
+function closeMenu() {
+  const closeButton = document.getElementById("closeOptionsButton")
+
+  closeButton.addEventListener("click", () => {
+    close(optionsMenu)
+  })
+}
+
+function openMenu() {
+  // Open
+  const openButton = document.getElementById("showOptionsButton");
+
+  openButton.addEventListener("click", () => {
+    open(optionsMenu)
+  })
+}

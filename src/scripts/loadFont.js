@@ -1,6 +1,6 @@
 import processFontInput from "./processFontInput";
 import injectFont from "./injectFont";
-import hide from "./hide";
+import close from "./close";
 
 export default function loadFont() {
   // Load font
@@ -25,7 +25,7 @@ function changeFont() {
 
       // Close
       const optionsDiv = document.querySelector("#optionsDiv");
-      hide(optionsDiv);
+      close(optionsDiv);
     }
   })
 }

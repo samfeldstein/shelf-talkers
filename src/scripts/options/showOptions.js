@@ -1,9 +1,6 @@
 // Define button logic
 export default function showOptions() {
 
-  // Get button
-  const button = document.getElementById("showOptionsButton");
-
   // Run show on click
   button.addEventListener("click", show);
 }

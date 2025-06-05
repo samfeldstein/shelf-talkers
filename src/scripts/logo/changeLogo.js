@@ -1,4 +1,4 @@
-import hide from "../hide";
+import close from "../close";
 
 export default function changeLogo() {
   const input = document.getElementById("logoUpload");
@@ -21,9 +21,9 @@ export default function changeLogo() {
     };
     reader.readAsDataURL(file);
 
-    // Hide options menu
+    // Close options menu
     const options = document.getElementById("optionsDiv")
-    hide(options)
+    close(options)
   });
 }
 
