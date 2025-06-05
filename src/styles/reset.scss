@@ -16,6 +16,15 @@ body {
   min-height: 100vh;
 }
 
+main {
+
+  p,
+  ul,
+  ol {
+    text-align: justify;
+  }
+}
+
 img {
   /* Make images responsive */
   max-width: 100%;
@@ -40,7 +49,8 @@ input {
   font: inherit;
 }
 
-button, .button {
+button,
+.button {
   cursor: pointer;
 }
 

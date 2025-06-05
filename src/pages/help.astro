@@ -9,12 +9,21 @@ import "../styles/help.scss";
     <h1>Help</h1>
   </header>
   <main>
-    If you have questions, email me at <a href="mailto:sam@samfeldstein.xyz"
-      >sam@samfeldstein.xyz</a
-    >.
+    <p>
+      <strong
+        >Card sizes on the webpage do not correlate to card sizes on the printed
+        page.</strong
+      > That's because the card sizes on the webpage morph to fit different screens.
+      Make sure you preview the printed page before you print.
+    </p>
+    <p>
+      If you have questions, email me at <a href="mailto:sam@samfeldstein.xyz"
+        >sam@samfeldstein.xyz</a
+      >.
+    </p>
 
     <section>
-      <h2 id="fonts">Adding fonts</h2>
+      <h2 id="changeFont">Change font</h2>
       <ul>
         <li>Go to <a href="https://fonts.google.com/">Google Fonts</a></li>
         <li>Click on a font</li>
@@ -23,7 +32,7 @@ import "../styles/help.scss";
         <li>Click <strong>Get embed code</strong> (right)</li>
         <li>Make sure you only have <strong>one font selected</strong></li>
         <li>
-          On the right, in <strong>Web</strong> tab, you'll see <strong
+          In the <strong>Web</strong> tab (right), you'll see <strong
             >Embed code in the <code>&lt;/head&gt;</code>
             of your html</strong
           >
@@ -31,9 +40,37 @@ import "../styles/help.scss";
         <li>Click <strong>Copy code</strong></li>
         <li>Come back to this website</li>
         <li>Click <strong>Options, Change font</strong></li>
-        <li>Paste the code inside</li>
+        <li>Paste the code inside the text box</li>
         <li>Hit <kbd>Enter</kbd></li>
       </ul>
+    </section>
+
+    <section>
+      <h2 id="fontSize">Change font size</h2>
+      <ul>
+        <li>Click <strong>Options, Change font size</strong></li>
+        <li>Enter a number (units are pixels)</li>
+        <li>Hit <strong>Enter</strong></li>
+      </ul>
+
+      <p>
+        This does not affect the font size of the webpage. Only of the print
+        page.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="logo">Change logo</h2>
+      <ul>
+        <li>Click <strong>Options, Change logo</strong></li>
+        <li>Click <strong>Choose image file</strong></li>
+        <li>Select an image</li>
+      </ul>
+
+      <p>
+        Try to keep the image less than 70px tall. Anything bigger will push the
+        text down.
+      </p>
     </section>
   </main>
 </Base>
