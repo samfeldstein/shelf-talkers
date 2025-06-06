@@ -18,6 +18,9 @@ export default function injectFont(href) {
   const match = href.match(/family=([^:&"]+)/);
   if (!match) return;
   const fontName = match[1].split(":")[0].replace(/\+/g, " ");
-  const container = document.getElementById("cardContainer");
-  container.style.fontFamily = `'${fontName}'`;
+  
+  // Change card font family
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.fontFamily = `'${fontName}'`;
+  });  
 }
