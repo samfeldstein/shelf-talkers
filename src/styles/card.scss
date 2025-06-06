@@ -20,7 +20,7 @@
 }
 
 img.logo {
-  max-height: 50px;
+  max-height: 40px;
   width: auto;
 
   &.hidden {
@@ -71,7 +71,7 @@ img.logo {
 // Print styles
 @media print {
   .card {
-    --print-size: 15px;
+    --print-size: 13.5px;
     --title-size: 1.5;
     --letter-spacing: calc((var(--print-size) * 0.1));
     // Layout
