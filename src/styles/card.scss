@@ -34,7 +34,7 @@ img.logo {
 }
 
 .title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-variant: small-caps;
   font-weight: 700;
   text-transform: lowercase;
@@ -75,7 +75,7 @@ img.logo {
     --title-size: 1.5;
     --letter-spacing: calc((var(--print-size) * 0.1));
     // Layout
-    height: 2.5in;
+    height: 2.25in;
     width: 5in;
     overflow: hidden;
     padding: 10px;
