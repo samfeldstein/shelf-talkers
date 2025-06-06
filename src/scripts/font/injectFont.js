@@ -19,5 +19,5 @@ export default function injectFont(href) {
   if (!match) return;
   const fontName = match[1].split(":")[0].replace(/\+/g, " ");
   const container = document.getElementById("cardContainer");
-  if (container) container.style.fontFamily = `'${fontName}', serif`;
+  container.style.fontFamily = `'${fontName}'`;
 }
