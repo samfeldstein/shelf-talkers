@@ -4,7 +4,7 @@ import "../styles/config.scss";
 import "../styles/global.scss";
 // Props
 const siteTitle = "Shelf Talker Generator";
-const siteUrl = "https://shelftalkers.samfeldstein.xyz/";
+const siteUrl = "https://shelftalkers.samfeldstein.xyz";
 const { pageTitle, prefetch, description } = Astro.props;
 ---
 
@@ -50,7 +50,7 @@ const { pageTitle, prefetch, description } = Astro.props;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:image" content=`${siteUrl}/open-graph-image.jpg` />
-  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:url" content={Astro.url} />
 
   <!-- Twitter markup (also handles Bluesky) -->
   <meta name="twitter:title" content=`${pageTitle} | ${siteTitle}` />
