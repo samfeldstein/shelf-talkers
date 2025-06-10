@@ -1,9 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
 import "../styles/help.scss";
+
+const description = "Help and tips for using the Shelf Talkers app.";
 ---
 
-<Base pageTitle="Help" prefetch="">
+<Base pageTitle="Help" description={description} prefetch="">
   <header>
     <nav><a href="/">Home</a></nav>
     <h1>Help</h1>

@@ -4,7 +4,7 @@ import "../styles/config.scss";
 import "../styles/global.scss";
 // Props
 const siteTitle = "Shelf Talker Generator";
-const { pageTitle, script, prefetch } = Astro.props;
+const { pageTitle, prefetch, description } = Astro.props;
 ---
 
 <head>
@@ -35,10 +35,30 @@ const { pageTitle, script, prefetch } = Astro.props;
   />
   <link rel="prefetch" href=`/${prefetch}` />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Site info -->
+  <title>{pageTitle} | {siteTitle}</title>
   <meta
     name="description"
-    content="A simple app for generating shelf talkers."
+    content={description ||
+      "A simple app for generating formatted shelf talkers."}
   />
-  <title>{pageTitle} | {siteTitle}</title>
-  {script && <script type="module" src={script} />}
+
+  <!-- Open Graph markup -->
+  <meta property="og:title" content=`${pageTitle} | ${siteTitle}` />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://shelf-talker.pages.dev/open-graph-image.jpg"
+  />
+  <meta property="og:url" content={Astro.url.href} />
+
+  <!-- Twitter markup (also handles Bluesky) -->
+  <meta name="twitter:title" content=`${pageTitle} | ${siteTitle}` />
+  <meta name="twitter:description" content={description} />
+  <meta
+    name="twitter:image"
+    content="https://shelf-talker.pages.dev/open-graph-image.jpg"
+  />
 </head>

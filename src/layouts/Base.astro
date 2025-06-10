@@ -2,12 +2,12 @@
 import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
 
-const { pageTitle, script, prefetch} = Astro.props;
+const { pageTitle, prefetch, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <Head pageTitle={pageTitle} script={script} prefetch={prefetch}/>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+  <Head pageTitle={pageTitle} description={description} prefetch={prefetch} />
   <body>
     <slot />
     <Footer />

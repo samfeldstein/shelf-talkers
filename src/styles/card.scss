@@ -1,7 +1,4 @@
 .card {
-  // Typography
-
-
   // Border
   border-width: 1px;
   border-style: solid;
@@ -77,11 +74,13 @@ img.logo {
     --print-size: 13.5px;
     --title-size: 1.5;
     --letter-spacing: calc((var(--print-size) * 0.1));
+
     // Layout
     height: 2.25in;
     width: 5in;
     overflow: hidden;
     padding: 10px;
+
     // Typography
     font-size: var(--print-size);
 
