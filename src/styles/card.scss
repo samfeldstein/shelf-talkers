@@ -7,12 +7,13 @@
 
   p {
     text-align: justify;
+    hyphens: auto;
   }
 }
 
 .card-header {
-  line-height: 1.2;
-  
+  line-height: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -72,9 +73,8 @@ img.logo {
 // Print styles
 @media print {
   .card {
-    --print-size: 13.5px;
-    --title-size: 1.5;
-    --letter-spacing: calc((var(--print-size) * 0.1));
+    --print-size: 15px;
+    --letter-spacing: calc((var(--print-size) * 0.075));
 
     // Layout
     height: 2.25in;
@@ -82,16 +82,30 @@ img.logo {
     overflow: hidden;
     padding: 10px;
 
+    // Set so logo can be relative to it
+    position: relative;
+
     // Typography
     font-size: var(--print-size);
 
     .title {
       letter-spacing: var(--letter-spacing);
+      font-size: calc(var(--print-size) * 1.9);
     }
 
     .author {
-      font-size: calc(var(--print-size) * 1.25);
+      font-size: calc(var(--print-size) * 1.45);
       letter-spacing: var(--letter-spacing);
+    }
+
+    img.logo {
+      max-width: 58px;
+      // Position
+      position: absolute;
+      left: 420px;
+      top: 5px;
+      position: fixed;
+      z-index: 100;
     }
 
     p {
@@ -101,13 +115,5 @@ img.logo {
     .submitter {
       letter-spacing: var(--letter-spacing);
     }
-
-    img.logo {
-      max-height: 30px;
-    }
-  }
-
-  .title {
-    font-size: calc(var(--print-size) * var(--title-size));
   }
 }
