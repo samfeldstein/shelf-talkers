@@ -104,6 +104,7 @@ img.logo {
 
     .submitter {
       letter-spacing: var(--letter-spacing);
+      font-size: calc(var(--print-size) * 0.9);
     }
   }
 }
