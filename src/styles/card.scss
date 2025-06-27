@@ -17,13 +17,11 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
 }
 
 img.logo {
   width: auto;
   max-height: 70px;
-  padding-right: 0.5em;
 
   &.hidden {
     display: none;
@@ -50,7 +48,9 @@ img.logo {
 }
 
 .blurb {
-  flex: 1;
+  @media screen {
+    min-height: 100px; 
+  }
 }
 
 .submitter {
@@ -99,12 +99,12 @@ img.logo {
     }
 
     img.logo {
-      max-width: 58px;
+      max-height: 3.75em;
+      width: auto;
       // Position
       position: absolute;
-      left: 420px;
+      right: 10px;
       top: 5px;
-      position: fixed;
       z-index: 100;
     }
 
