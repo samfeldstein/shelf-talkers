@@ -12,8 +12,6 @@
 }
 
 .card-header {
-  line-height: 1;
-
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -83,6 +81,10 @@ img.logo {
     // Typography
     font-size: var(--print-size);
 
+    .card-header {
+      line-height: 1;
+    }
+    
     .title {
       letter-spacing: var(--letter-spacing);
       font-size: calc(var(--print-size) * 1.6);
