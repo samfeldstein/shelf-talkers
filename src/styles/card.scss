@@ -3,7 +3,9 @@
   border-width: 1px;
   border-style: solid;
   border-color: #d9d9d9;
-  padding: 1rem;
+  padding: 0.75em;
+  display: flex;
+  flex-direction: column;
 
   p {
     text-align: justify;
@@ -15,11 +17,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  padding-bottom: 0.5em;
 }
 
 img.logo {
   width: auto;
-  max-height: 70px;
 
   &.hidden {
     display: none;
@@ -32,17 +35,20 @@ img.logo {
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.65rem;
   font-variant: small-caps;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: lowercase;
-
 }
 
 .author {
   font-variant: small-caps;
-  font-size: 1.25rem;
   text-transform: lowercase;
+  color: #5a5a5a;
+}
+
+.blurb {
+  flex: 1;
 }
 
 .submitter {
@@ -61,8 +67,12 @@ img.logo {
     display: block;
   }
 
-  .blurb {
-    min-height: 100px;
+  .blurb{
+    min-height: 200px;
+  }
+
+  img.logo {
+    max-height: 3em;
   }
 }
 
@@ -76,7 +86,7 @@ img.logo {
     height: 2.25in;
     width: 5in;
     overflow: hidden;
-    padding: 15px;
+    padding: 10px;
 
     // Typography
     font-size: var(--print-size);
@@ -87,16 +97,15 @@ img.logo {
     
     .title {
       letter-spacing: var(--letter-spacing);
-      font-size: calc(var(--print-size) * 1.6);
+      font-size: calc(var(--print-size) * 1.5);
     }
 
     .author {
-      font-size: calc(var(--print-size) * 1.25);
       letter-spacing: var(--letter-spacing);
     }
 
     img.logo {
-      max-height: 3.5em;
+      max-height: 2.5em;
       width: auto;
     }
 
@@ -106,7 +115,6 @@ img.logo {
 
     .submitter {
       letter-spacing: var(--letter-spacing);
-      font-size: calc(var(--print-size) * 0.9);
     }
   }
 }
