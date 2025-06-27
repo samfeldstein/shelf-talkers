@@ -78,10 +78,7 @@ img.logo {
     height: 2.25in;
     width: 5in;
     overflow: hidden;
-    padding: 10px;
-
-    // Set so logo can be relative to it
-    position: relative;
+    padding: 15px;
 
     // Typography
     font-size: var(--print-size);
@@ -99,11 +96,6 @@ img.logo {
     img.logo {
       max-height: 3.75em;
       width: auto;
-      // Position
-      position: absolute;
-      right: 10px;
-      top: 5px;
-      z-index: 100;
     }
 
     p {
