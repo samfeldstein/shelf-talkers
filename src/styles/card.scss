@@ -47,12 +47,6 @@ img.logo {
   text-transform: lowercase;
 }
 
-.blurb {
-  @media screen {
-    min-height: 100px; 
-  }
-}
-
 .submitter {
   font-variant: small-caps;
   text-transform: lowercase;
@@ -68,12 +62,16 @@ img.logo {
     pointer-events: none;
     display: block;
   }
+
+  .blurb {
+    min-height: 100px;
+  }
 }
 
 // Print styles
 @media print {
   .card {
-    --print-size: 15px;
+    --print-size: 14px;
     --letter-spacing: calc((var(--print-size) * 0.075));
 
     // Layout
