@@ -1,8 +1,9 @@
-@use "fonts";
-@use "reset";
+@use 'fonts';
+@use 'reset';
+@use 'config';
 
 html {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: 16px;
 }
 
 body {
@@ -17,10 +18,8 @@ body {
 }
 
 h1 {
-  font-variant: small-caps;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 2.5rem;
-  text-transform: lowercase;
   text-align: center;
 
   letter-spacing: 0.075em;

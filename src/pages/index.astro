@@ -1,13 +1,13 @@
 ---
 // Layout
-import Base from "../layouts/Base.astro";
+import Base from "@/layouts/Base.astro";
 
 // Components
-import CardContainer from "../components/CardContainer.astro";
-import Options from "../components/Options.astro";
+import CardContainer from "@/components/CardContainer.vue";
+import Options from "@/components/Options.astro";
 
 // Styles
-import "../styles/home.scss";
+import "@/styles/home.scss";
 ---
 
 <Base pageTitle="Home" prefetch="help">
@@ -22,9 +22,8 @@ import "../styles/home.scss";
 	</header>
 	<main>
 		<p class="instructions">
-			Click any field to edit. <kbd>CmdP</kbd> to print on Mac. <kbd>CtrlP</kbd>
-			on Windows.
+			Click any card to edit. <kbd>Cmd/Ctrl + P</kbd> to print.
 		</p>
 	</main>
-	<CardContainer />
+	<CardContainer client:only="vue" />
 </Base>
