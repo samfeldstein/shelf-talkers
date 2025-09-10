@@ -2,7 +2,8 @@
 .astro/
 
 # dependencies
-node_modules/
+node_modules/*
+!node_modules/astro/
 
 # logs
 npm-debug.log*
@@ -19,3 +20,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Other
+dist/
+package-lock.json
+.vscode/
