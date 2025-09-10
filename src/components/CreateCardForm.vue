@@ -32,42 +32,83 @@ function handleSubmit() {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit">
-    <label>
-      Title:
-      <input ref="titleInput" v-model="form.title" required />
-    </label>
-    <label>
-      Author:
-      <input v-model="form.author" required />
-    </label>
-    <label>
-      Blurb:
-      <textarea v-model="form.blurb" required></textarea>
-    </label>
-    <label>
-      Attribution:
-      <input v-model="form.attribution" required />
-    </label>
-    <button type="submit">Add Card</button>
+  <form @submit.prevent="handleSubmit" aria-labelledby="form-title">
+    <fieldset>
+      <legend id="form-title">Create Talker</legend>
+
+      <div>
+        <label for="title-input">Title</label>
+        <input
+          id="title-input"
+          ref="titleInput"
+          v-model="form.title"
+          placeholder="The Road"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <div>
+        <label for="author-input">Author</label>
+        <input
+          id="author-input"
+          v-model="form.author"
+          placeholder="Cormac McCarthy"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <div>
+        <label for="blurb-input">Blurb</label>
+        <textarea
+          id="blurb-input"
+          v-model="form.blurb"
+          placeholder="Woof"
+          required
+          autocomplete="off"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="attribution-input">Attribution</label>
+        <input
+          id="attribution-input"
+          v-model="form.attribution"
+          placeholder="Sam, Bookseller at Composition Shop"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <button type="submit">Add Card</button>
+    </fieldset>
   </form>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
+
+fieldset {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+div {
+  display: grid;
+  gap: 0.5rem;
+}
+
 label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
-textarea {
-  min-height: 80px;
-}
-button {
-  align-self: flex-start;
+
+input,textarea {
+  padding: 0.25em;
 }
 </style>
