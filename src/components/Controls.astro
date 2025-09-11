@@ -1,9 +1,11 @@
 ---
 import CreateCardForm from "./CreateCardForm.vue";
+import ClearCards from "./ClearCards.vue";
 ---
 
 <section id="controls">
-  <CreateCardForm client:load />
+  <CreateCardForm client:only="vue" />
+  <ClearCards client:only="vue"/>
 </section>
 
 <style>
