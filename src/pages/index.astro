@@ -2,7 +2,6 @@
 import Base from "@/layouts/Base.astro";
 import CardContainer from "@/components/CardContainer.vue";
 import Controls from "@/components/Controls.astro";
-import "@/styles/home.scss";
 ---
 
 <Base pageTitle="Home" prefetch="help">
@@ -12,10 +11,7 @@ import "@/styles/home.scss";
 		</nav>
 		<h1>Shelf Talker Generator</h1>
 	</header>
-	<main>
-		<p class="instructions">
-			Click any card to edit. <kbd>Cmd/Ctrl + P</kbd> to print.
-		</p>
+	<main id="main">
 		<Controls />
 		<CardContainer client:only="vue" />
 	</main>

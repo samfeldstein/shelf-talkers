@@ -1,6 +1,7 @@
 @use 'fonts';
 @use 'reset';
 @use 'config';
+@use 'utils';
 @use 'print';
 
 html {
@@ -19,9 +20,13 @@ body {
   }
 }
 
+nav {
+  @extend .sans-serif;
+}
+
 h1 {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2em;
   text-align: center;
 
   letter-spacing: 0.075em;
@@ -62,29 +67,14 @@ code {
   font-weight: 700;
 }
 
-// Inherit fonts
-fieldset,
-button,
-textarea,
-input {
-  font: inherit;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-
-  &:focus-visible {
-    outline: 1px solid currentColor;
-  }
-}
-
-input,
-textarea {
-  padding: 0.5em;
-}
-
-button,
-.button {
-  padding: 0.75rem;
+button.default {
+  @extend .border;
+  @extend .focus-outline;
+  @extend .sans-serif;
+  @extend .small-caps;
+  padding: 0.5em 0.75em;
   background-color: var(--accent);
+  font-size: inherit;
   color: white;
   transition: background 0.2s ease;
 
@@ -95,19 +85,23 @@ button,
   }
 }
 
-fieldset {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
+input,
+textarea {
+  @extend .border;
+  @extend .focus-outline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5em;
+}
+
+label {
+  @extend .sans-serif;
 }
 
 legend {
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: var(--font-small);
+  font-family: var(--sans-serif);
   letter-spacing: 0.2em;
-}
 
-// Utils
-.box-shadow {
-  box-shadow: 0 2px 8px var(--accent);
+  padding: 2em 0.5em;
 }

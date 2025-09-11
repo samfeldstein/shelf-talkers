@@ -77,7 +77,7 @@ function submit() {
             required autocomplete="off" />
         </div>
 
-        <button class="submit" type="submit" :disabled="success">
+        <button class="submit default" type="submit" :disabled="success">
           {{ success ? "Talker Created ✓" : "Create Talker" }}
         </button>
       </fieldset>
@@ -86,6 +86,17 @@ function submit() {
 </template>
 
 <style lang="scss" scoped>
+form {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+fieldset {
+  display: grid;
+  gap: 2rem;
+}
+
 div {
   display: grid;
   gap: 0.5rem;
@@ -93,10 +104,6 @@ div {
 
 label {
   font-weight: 700;
-  font-size: 1rem;
-}
-
-button.submit {
-  width: fit-content;
+  font-size: var(--font-small);
 }
 </style>

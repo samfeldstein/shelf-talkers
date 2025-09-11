@@ -17,35 +17,37 @@ function closeModal() {
 </script>
 
 <template>
-  <button @click="openModal">{{ label }}</button>
+  <button class="open default" @click="openModal">{{ label }}</button>
 
-  <dialog ref="dialogRef">
-    <div class="content">
-
-
-      <slot />
-
-      <button class="close" @click="closeModal">Close</button>
-    </div>
+  <dialog class="box-shadow" ref="dialogRef">
+    <slot />
+    <button class="close" @click="closeModal">&times;</button>
   </dialog>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 dialog {
-  width: 100%;
-  height: 100%;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-}
-
-.content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-width: 50%;
 }
 
 button.close {
-  width: fit-content;
+  margin-top: 4em;
+  padding: 1em;
+  display: flex;
+  justify-self: center;
+  border: none;
+
+  font-size: var(--font-large);
+  background: none;
+  color: var(--accent);
+
+  &:hover {
+    color: var(--text-color);
+  }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      border-radius: 4px;
+    }
 }
 </style>
