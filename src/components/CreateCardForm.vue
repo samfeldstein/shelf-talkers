@@ -1,39 +1,49 @@
 <script setup>
-import { reactive, ref, nextTick } from "vue";
+import { ref, reactive, nextTick } from "vue";
+import { useCards } from '@/composables/useCards'
 import Modal from "./Modal.vue";
 
-const emit = defineEmits(["create"]);
+const { cards } = useCards()
 
 const form = reactive({
   title: "The Road",
   author: "Cormac McCarthy",
-  blurb: "Oof",
+  blurb: "Woof",
   attribution: "Sam",
-});
+})
 
-const titleInput = ref(null);
-const success = ref(false);
+const titleInput = ref(null)
+const success = ref(false)
 
-function isFormValid() {
-  return Object.values(form).every((val) => val.trim() !== "");
+function submitCard(formData) {
+  cards.value.push({ ...formData })
 }
 
-function handleSubmit() {
+function isFormValid() {
+  return Object.values(form).every((val) => val.trim() !== "")
+}
+
+function resetForm() {
+  form.title = ""
+  form.author = ""
+  form.blurb = ""
+  form.attribution = ""
+}
+
+function submit() {
   if (isFormValid()) {
-    emit("create", { ...form });
-    form.title = "";
-    form.author = "";
-    form.blurb = "";
-    form.attribution = "";
+    submitCard(form)
 
     // Set success state for submit button
-    success.value = true;
+    success.value = true
     setTimeout(() => {
-      success.value = false;
-    }, 2000);
+      success.value = false
+    }, 2000)
+
+    resetForm()
 
     nextTick(() => {
-      titleInput.value?.focus();
+      titleInput.value?.focus()
     });
   }
 }
@@ -41,7 +51,7 @@ function handleSubmit() {
 
 <template>
   <Modal label="Create Talker">
-    <form @submit.prevent="handleSubmit" aria-labelledby="form-title">
+    <form @submit.prevent="submit" aria-labelledby="form-title">
       <fieldset>
         <legend id="form-title">Create Talker</legend>
 

@@ -6,6 +6,9 @@
     P052,
     serif;
   --font-size-body: clamp(1rem, 5vw, 1.25rem);
+  --font-small: calc(var(--font-size-body) * 0.8);
+  --font-large: calc(var(--font-size-body) * 1.2);
+  --card-font: 'Courier Prime', 'Courier', 'monospace';
 
   // Colors
   --text-color: black;

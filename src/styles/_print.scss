@@ -1,0 +1,42 @@
+:root {
+  --card-width: 5in;
+  --card-height: 2.25in;
+  --font: 'Courier Prime';
+  --title-size: 16px;
+  --author-size: 12px;
+  --blurb-size: 14px;
+  --attribution-size: 12px;
+  --logo-height: 45px;
+}
+
+@media print {
+  @page {
+    margin: 0.25in;
+    page-orientation: landscape;
+    size: landscape;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  #vue-inspector-container {
+    display: none;
+  }
+
+  #__vue-devtools-container__{
+    display: none;
+  }
+}
