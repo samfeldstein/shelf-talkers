@@ -27,7 +27,7 @@ function closeModal() {
 
 <style lang="scss" scoped>
 dialog {
-  min-width: 50%;
+  min-width: 70%;
 }
 
 button.close {

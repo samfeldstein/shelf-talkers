@@ -6,16 +6,13 @@ import Preview from "./Preview.astro";
 
 <Modal label="Options" client:visible>
   <CardSize client:visible />
-  <Preview />
+  <section id="preview">
+    <Preview />
+  </section>
 </Modal>
 
-<!-- <script setup>
-import Modal from './Modal.vue';
-import CardSize from './CardSize.vue';
-</script>
-
-<template>
-  <Modal label="Options">
-    <CardSize />
-  </Modal>
-</template> -->
+<style scoped>
+  section {
+    margin-top: 2rem;
+  }
+</style>
