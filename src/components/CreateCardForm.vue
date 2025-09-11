@@ -11,6 +11,7 @@ const form = reactive({
 });
 
 const titleInput = ref(null);
+const success = ref(false);
 
 function isFormValid() {
   return Object.values(form).every((val) => val.trim() !== "");
@@ -23,6 +24,12 @@ function handleSubmit() {
     form.author = "";
     form.blurb = "";
     form.attribution = "";
+
+     // Set success state for submit button
+    success.value = true;
+    setTimeout(() => {
+      success.value = false;
+    }, 2000);
 
     nextTick(() => {
       titleInput.value?.focus();
@@ -47,6 +54,7 @@ function toggleForm() {
   <button type="button" @click="toggleForm">
     {{ showForm ? "Hide Form" : "Show Form" }}
   </button>
+  <p class="success">Talker created</p>
   <form v-show="showForm" @submit.prevent="handleSubmit" aria-labelledby="form-title">
     <fieldset>
       <legend id="form-title">Create Talker</legend>
@@ -96,7 +104,7 @@ function toggleForm() {
         />
       </div>
 
-      <button type="submit">Add Card</button>
+      <button type="submit" :disabled="success">{{ success ? "Talker Created ✓" : "Create Talker" }}</button>
     </fieldset>
   </form>
 </template>
@@ -117,5 +125,10 @@ div {
 label {
   font-weight: 700;
   font-size: 1rem;
+}
+
+.success {
+  position: absolute;
+  z-index: 2;
 }
 </style>
