@@ -1,29 +1,41 @@
 <script setup>
-import { reactive, ref, nextTick } from 'vue';
+import { reactive, ref, nextTick } from "vue";
 
-const emit = defineEmits(['create']);
+const emit = defineEmits(["create"]);
 
 const form = reactive({
-  title: 'The Road',
-  author: 'Cormac McCarthy',
-  blurb: 'Oof',
-  attribution: 'Sam'
+  title: "The Road",
+  author: "Cormac McCarthy",
+  blurb: "Oof",
+  attribution: "Sam",
 });
 
-const titleInput = ref(null)
+const titleInput = ref(null);
 
 function isFormValid() {
-  return Object.values(form).every(val => val.trim() !== '');
+  return Object.values(form).every((val) => val.trim() !== "");
 }
 
 function handleSubmit() {
   if (isFormValid()) {
-    emit('create', { ...form });
-    form.title = '';
-    form.author = '';
-    form.blurb = '';
-    form.attribution = '';
+    emit("create", { ...form });
+    form.title = "";
+    form.author = "";
+    form.blurb = "";
+    form.attribution = "";
 
+    nextTick(() => {
+      titleInput.value?.focus();
+    });
+  }
+}
+
+// Toggle form
+const showForm = ref(false);
+
+function toggleForm() {
+  showForm.value = !showForm.value;
+  if (showForm.value) {
     nextTick(() => {
       titleInput.value?.focus();
     });
@@ -32,7 +44,10 @@ function handleSubmit() {
 </script>
 
 <template>
-  <form @submit.prevent="handleSubmit" aria-labelledby="form-title">
+  <button type="button" @click="toggleForm">
+    {{ showForm ? "Hide Form" : "Show Form" }}
+  </button>
+  <form v-show="showForm" @submit.prevent="handleSubmit" aria-labelledby="form-title">
     <fieldset>
       <legend id="form-title">Create Talker</legend>
 
@@ -88,14 +103,10 @@ function handleSubmit() {
 
 <style lang="scss" scoped>
 form {
+  position: fixed;
+  background: white;
+  width: 100%;
   max-width: 40rem;
-  margin: 0 auto;
-}
-
-fieldset {
-  display: grid;
-  gap: 2rem;
-  padding: 2rem;
 }
 
 div {
@@ -106,9 +117,5 @@ div {
 label {
   font-weight: 700;
   font-size: 1rem;
-}
-
-input,textarea {
-  padding: 0.25em;
 }
 </style>
