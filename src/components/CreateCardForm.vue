@@ -25,7 +25,7 @@ function handleSubmit() {
     form.blurb = "";
     form.attribution = "";
 
-     // Set success state for submit button
+    // Set success state for submit button
     success.value = true;
     setTimeout(() => {
       success.value = false;
@@ -54,8 +54,12 @@ function toggleForm() {
   <button type="button" @click="toggleForm">
     {{ showForm ? "Hide Form" : "Show Form" }}
   </button>
-  <p class="success">Talker created</p>
-  <form v-show="showForm" @submit.prevent="handleSubmit" aria-labelledby="form-title">
+  <form
+    class="box-shadow"
+    v-show="showForm"
+    @submit.prevent="handleSubmit"
+    aria-labelledby="form-title"
+  >
     <fieldset>
       <legend id="form-title">Create Talker</legend>
 
@@ -104,7 +108,9 @@ function toggleForm() {
         />
       </div>
 
-      <button type="submit" :disabled="success">{{ success ? "Talker Created ✓" : "Create Talker" }}</button>
+      <button type="submit" :disabled="success">
+        {{ success ? "Talker Created ✓" : "Create Talker" }}
+      </button>
     </fieldset>
   </form>
 </template>
@@ -112,9 +118,19 @@ function toggleForm() {
 <style lang="scss" scoped>
 form {
   position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background: white;
   width: 100%;
+  height: 100dvh;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+fieldset {
   max-width: 40rem;
+  margin: 0 auto;
 }
 
 div {
@@ -125,10 +141,5 @@ div {
 label {
   font-weight: 700;
   font-size: 1rem;
-}
-
-.success {
-  position: absolute;
-  z-index: 2;
 }
 </style>
