@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import CreateCardForm from './CreateCardForm.vue';
+import Card from './Card.vue';
 
 const cards = ref([]);
 
@@ -17,12 +18,9 @@ function addCard(card) {
 
 <template>
   <CreateCardForm @create="addCard" />
-  <ul>
-    <li v-for="(card, idx) in cards" :key="idx">
-      <h3>{{ card.title }}</h3>
-      <p>{{ card.author }}</p>
-      <p>{{ card.blurb }}</p>
-      <p><em>{{ card.attribution }}</em></p>
-    </li>
-  </ul>
+  <div class="cards">
+    <Card v-for="(card, index) in cards" :key="index" :title="card.title" :author="card.author" :blurb="card.blurb"
+      :attribution="card.attribution" />
+  </div>
+
 </template>
