@@ -1,53 +1,37 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from 'vue'
 
-// Reactive state for card dimensions
-const cardWidth = ref("5"); // Default width in inches
-const cardHeight = ref("2.25"); // Default height in inches
+const cardWidth = ref('5')
+const cardHeight = ref('2.25')
 
-// Load saved dimensions from localStorage on page load
-onMounted(() => {
-  const savedWidth = localStorage.getItem("card-width");
-  const savedHeight = localStorage.getItem("card-height");
-
-  if (savedWidth) cardWidth.value = savedWidth;
-  if (savedHeight) cardHeight.value = savedHeight;
-
-  // Apply the saved dimensions to CSS variables
-  updateCardSize();
-});
-
-// Watch for changes and save to localStorage
-watch([cardWidth, cardHeight], ([newWidth, newHeight]) => {
-  localStorage.setItem("card-width", newWidth);
-  localStorage.setItem("card-height", newHeight);
-  updateCardSize();
-});
-
-// Function to update CSS variables
 function updateCardSize() {
-  document.documentElement.style.setProperty("--card-width", `${cardWidth.value}in`);
-  document.documentElement.style.setProperty("--card-height", `${cardHeight.value}in`);
+  localStorage.setItem('card-width', cardWidth.value)
+  localStorage.setItem('card-height', cardHeight.value)
+  document.documentElement.style.setProperty('--card-width', `${cardWidth.value}in`)
+  document.documentElement.style.setProperty('--card-height', `${cardHeight.value}in`)
 }
+
+onMounted(() => {
+  cardWidth.value = localStorage.getItem('card-width') ?? '5'
+  cardHeight.value = localStorage.getItem('card-height') ?? '2.25'
+  updateCardSize()
+})
 </script>
 
 <template>
   <fieldset>
     <legend>Card Size</legend>
-    <div class="input width">
-      <label for="card-width">Width (inches)</label>
-      <input id="card-width" type="number" step="0.05" v-model="cardWidth" />
-    </div>
-    <div class="input height">
-      <label for="card-height">Height (inches)</label>
-      <input id="card-height" type="number" step="0.05" v-model="cardHeight" />
-    </div>
+    <label for="card-width">Width (inches)</label>
+    <input id="card-width" type="number" step="0.05" v-model="cardWidth" @input="updateCardSize" />
+
+    <label for="card-height">Height (inches)</label>
+    <input id="card-height" type="number" step="0.05" v-model="cardHeight" @input="updateCardSize" />
   </fieldset>
 </template>
 
 <style scoped>
-div {
+fieldset {
   display: grid;
-  gap: 0.5rem;
+  gap: .5rem;
 }
 </style>

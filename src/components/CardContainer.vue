@@ -7,8 +7,7 @@ const { cards } = useCards()
 
 <template>
   <div class="cards">
-    <Card v-for="card in cards" :key="card.title" :title="card.title" :author="card.author" :blurb="card.blurb"
-      :attribution="card.attribution" />
+    <Card v-for="card in cards" :key="card.title" v-bind="card" />
   </div>
 </template>
 
