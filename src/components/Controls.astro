@@ -2,12 +2,14 @@
 import CreateCardForm from "./CreateCardForm.vue";
 import ClearCards from "./ClearCards.vue";
 import Options from "./Options.vue";
+import Print from "./Print.vue";
 ---
 
 <section id="controls" class="no-print">
-  <CreateCardForm client:only="vue" />
-  <Options client:only="vue" />
-  <ClearCards client:only="vue" />
+  <CreateCardForm client:load />
+  <Options client:load />
+  <ClearCards client:load />
+  <Print client:load />
 </section>
 
 <style>

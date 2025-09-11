@@ -96,6 +96,18 @@ textarea {
 
 label {
   @extend .sans-serif;
+  font-weight: 700;
+  font-size: var(--font-small);
+}
+
+fieldset {
+  display: grid;
+  gap: 2rem;
+
+  &>div {
+    display: grid;
+    gap: 0.5em;
+  }
 }
 
 legend {

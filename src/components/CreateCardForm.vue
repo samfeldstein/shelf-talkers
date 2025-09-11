@@ -91,19 +91,4 @@ form {
   max-width: 40rem;
   margin: 0 auto;
 }
-
-fieldset {
-  display: grid;
-  gap: 2rem;
-}
-
-div {
-  display: grid;
-  gap: 0.5rem;
-}
-
-label {
-  font-weight: 700;
-  font-size: var(--font-small);
-}
 </style>
