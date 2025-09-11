@@ -5,7 +5,6 @@ import Base from "@/layouts/Base.astro";
 // Components
 import CardContainer from "@/components/CardContainer.vue";
 import Options from "@/components/Options.astro";
-import Modal from "@/components/Modal.vue";
 
 // Styles
 import "@/styles/home.scss";
@@ -25,7 +24,6 @@ import "@/styles/home.scss";
 		<p class="instructions">
 			Click any card to edit. <kbd>Cmd/Ctrl + P</kbd> to print.
 		</p>
-		<Modal client:only="vue" />
 		<CardContainer client:only="vue" />
 	</main>
 </Base>
