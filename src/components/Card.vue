@@ -82,7 +82,7 @@ h3 {
 }
 
 .attribution {
-  font-size: var(--font-size-body);
+  font-size: var(--font-small);
   margin: 0;
   text-align: right;
   font-style: italic;
