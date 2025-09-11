@@ -1,18 +1,36 @@
 ---
 import Modal from "./Modal.vue";
 import CardSize from "./CardSize.vue";
+import Font from "./Font.astro";
 import Preview from "./Preview.astro";
 ---
 
 <Modal label="Options" client:visible>
-  <CardSize client:visible />
-  <section id="preview">
+  <section class="options">
+    <CardSize client:visible />
+    <Font />
+  </section>
+
+  <section class="preview">
     <Preview />
   </section>
 </Modal>
 
 <style scoped>
-  section {
+  section.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  section.preview {
     margin-top: 2rem;
+  }
+</style>
+
+<style lang="scss" is:global>
+  section.options {
+    fieldset {
+      flex: 1;
+    }
   }
 </style>

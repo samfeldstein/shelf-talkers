@@ -29,9 +29,3 @@ onMounted(() => {
   </fieldset>
 </template>
 
-<style scoped>
-fieldset {
-  display: grid;
-  gap: .5rem;
-}
-</style>

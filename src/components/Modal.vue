@@ -20,14 +20,22 @@ function closeModal() {
   <button class="open default" @click="openModal">{{ label }}</button>
 
   <dialog class="box-shadow" ref="dialogRef">
-    <slot />
-    <button class="close" @click="closeModal">&times;</button>
+    <div class="content">
+      <slot />
+      <button class="close" @click="closeModal">&times;</button>
+    </div>
   </dialog>
 </template>
 
 <style lang="scss" scoped>
 dialog {
   min-width: 70%;
+  padding: 0;
+}
+
+.content {
+  overflow: auto;
+  padding: 1rem;
 }
 
 button.close {

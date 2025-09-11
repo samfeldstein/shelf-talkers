@@ -18,7 +18,7 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
 
 <style lang="scss" scoped>
 .card {
-  font-family: var(--card-font);
+  font-family: var(--font);
   font-weight: 400;
   padding: 2rem;
   width: 100%;
