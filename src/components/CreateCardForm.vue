@@ -44,16 +44,14 @@ function toggleForm() {
   showForm.value = !showForm.value;
   if (showForm.value) {
     nextTick(() => {
-      titleInput.value?.focus();
+      titleInput.value?.focus();  
     });
   }
 }
 </script>
 
 <template>
-  <button type="button" @click="toggleForm">
-    {{ showForm ? "Hide Form" : "Show Form" }}
-  </button>
+  <button class="show" type="button" @click="toggleForm">Create Card</button>
   <form
     class="box-shadow"
     v-show="showForm"
@@ -113,6 +111,14 @@ function toggleForm() {
       </button>
     </fieldset>
   </form>
+  <button
+    type="button"
+    class="close-button"
+    @click="showForm = false"
+    aria-label="Close form"
+  >
+    &times;
+  </button>
 </template>
 
 <style lang="scss" scoped>
