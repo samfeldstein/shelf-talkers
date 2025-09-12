@@ -6,10 +6,10 @@ import Modal from "./Modal.vue";
 const { cards } = useCards()
 
 const form = reactive({
-  title: "The Road",
-  author: "Cormac McCarthy",
-  blurb: "Woof",
-  attribution: "Sam",
+  title: "",
+  author: "",
+  blurb: "",
+  attribution: "",
 })
 
 const titleInput = ref(null)

@@ -1,5 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
+import SideBar from "@/components/HelpSidebar.astro";
+import HelpTocMobile from "@/components/HelpTocMobile.astro";
 import "@/styles/help.scss";
 
 const description = "Help and tips for using the Shelf Talkers app.";
@@ -12,138 +14,141 @@ const description = "Help and tips for using the Shelf Talkers app.";
     </nav>
     <h1>Help</h1>
   </header>
-  <main>
-    <details class="toc">
-      <summary>Contents</summary>
+  <main id="main">
+    <HelpTocMobile />
+    <SideBar>
       <nav class="toc">
         <a href="#basics">Basic Usage</a>
         <a href="#print">Print</a>
-        <a href="#changeFont">Change font</a>
+        <a href="#font">Change font</a>
         <a href="#logo">Change logo</a>
         <a href="#privacy">Privacy</a>
       </nav>
-    </details>
-
-    <section>
-      <p>
-        Hi, I'm <a href="https://samfeldstein.xyz"
-          ><strong>Sam Feldstein</strong></a
-        >. I'm a bookseller at <a href="https://compositionshop.com/">
-          Composition shop</a
-        > in Longmont, CO. I built this app because making shelf talkers is a bit
-        of a pain, especially if you're doing it with a word processor. I wanted
-        to a tool that would ensure consistent formatting, was somewhat customizable,
-        and easy to use.
-      </p>
-
-      <p>
-        The code is <a href="https://github.com/samfeldstein/shelf-talkers"
-          >open source</a
-        >, and pull requests are welcome. You can also fork it and build your
-        own version.
-      </p>
-
-      <p>
-        If you have questions or feedback, you can email me at <a
-          href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a
-        >.
-      </p>
-    </section>
-
-    <section>
-      <h2 id="basics">Basic usage</h2>
-      <p>
-        This app is best used on a desktop, but it should work fine on your
-        smartphone.
-      </p>
-
-      <p>
-        Click any field to edit. <kbd>CmdP</kbd> to print on Mac.
-        <kbd>CtrlP</kbd> on Windows.
-      </p>
-
-      <p>
-        <strong
-          >Card sizes on the webpage do not correlate to card sizes on the
-          printed page.</strong
-        > That's because the card sizes on the webpage morph to fit different screens.
-        Make sure you preview the printed page before you print.
-      </p>
-      <p>
-        Any changes you make are stored automatically in the browser, so you can
-        pick up where you left off.
-      </p>
-    </section>
-
-    <section>
-      <h2 id="print">Print</h2>
-      <ul>
-        <li>
-          Hit <kbd>CmdP</kbd> to print on a Mac, <kbd>CtrlP</kbd> on Windows
-        </li>
-        <li>Change the orientation to <strong>Landscape</strong></li>
-        <li>Hide headers and footers, if the option exists</li>
-        <li>Set margins to <strong>Default</strong></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 id="changeFont">Change font</h2>
-      <ul>
-        <li>Go to <a href="https://fonts.google.com/">Google Fonts</a></li>
-        <li>Click on a font</li>
-        <li>Click <strong>Get Font</strong> (upper right)</li>
-        <li>Delete any fonts you don't need</li>
-        <li>Click <strong>Get embed code</strong> (right)</li>
-        <li>Make sure you only have <strong>one font selected</strong></li>
-        <li>
-          In the <strong>Web</strong> tab (right), you'll see <strong
-            >Embed code in the <code>&lt;/head&gt;</code>
-            of your html</strong
-          >
-        </li>
-        <li>Click <strong>Copy code</strong></li>
-        <li>Come back to this website</li>
-        <li>Click <strong>Options, Change font</strong></li>
-        <li>Paste the code inside the text box</li>
-        <li>Hit <kbd>Enter</kbd></li>
-      </ul>
-
-      <section>
-        <h3 id="fontSize">Change font size</h3>
-        <ul>
-          <li>Click <strong>Options, Change font size</strong></li>
-          <li>Enter a number (units are pixels)</li>
-          <li>Hit <strong>Enter</strong></li>
-        </ul>
+    </SideBar>
+    <div class="content">
+      <section class="intro">
+        <p>
+          Hi, I’m <a href="https://samfeldstein.xyz"
+            ><strong>Sam Feldstein</strong></a
+          >. I’m a bookseller at <a href="https://compositionshop.com/">
+            Composition shop</a
+          > in Longmont, CO. I built this app because making shelf talkers is a bit
+          of a pain, especially if you’re doing it with a word processor. I wanted
+          to a tool that would ensure consistent formatting, was somewhat customizable,
+          and easy to use.
+        </p>
 
         <p>
-          This does not affect the font size of the webpage. Only of the print
-          page.
+          The app is pretty simple, and offers minimal customization options. If
+          you’re looking for a fully customizable template, you’re better off
+          using Canva or Figma.
+        </p>
+
+        <p>
+          The code is <a
+            href="https://github.com/samfeldstein/shelf-talkers-vue"
+            >open source</a
+          >, and pull requests are welcome. You can also fork it and build your
+          own version.
+        </p>
+
+        <p>
+          If you have questions or feedback, you can email me at <a
+            href="mailto:samfeldstein@pm.me">samfeldstein@pm.me</a
+          >.
         </p>
       </section>
-    </section>
 
-    <section>
-      <h2 id="logo">Change logo</h2>
-      <ul>
-        <li>Click <strong>Options, Change logo</strong></li>
-        <li>Click <strong>Choose image file</strong></li>
-        <li>Select an image</li>
-      </ul>
+      <section>
+        <h2 id="basics">Basic usage</h2>
+        <p>
+          This app is best used on a desktop, but it should work fine on your
+          smartphone.
+        </p>
 
-      <p>
-        Around 55px should be a good image size, but you might have to play with
-        it. You can resize most images with <a
-          href="https://squoosh.app"
-          target="_blank">Squoosh</a
-        >.
-      </p>
-    </section>
+        <p>
+          Click any field to edit. <kbd>CmdP</kbd> to print on Mac.
+          <kbd>CtrlP</kbd> on Windows.
+        </p>
 
-    <section>
-      <h2 id="privacy">Privacy</h2>
-      <p>Your data is stored in your browser. Nobody can see it except you.</p>
-    </section>
+        <p>
+          <strong
+            >Card sizes on the webpage do not correlate to card sizes on the
+            printed page.</strong
+          > That's because the card sizes on the webpage morph to fit different screens.
+          Make sure you preview the printed page before you print.
+        </p>
+        <p>
+          Any changes you make are stored automatically in the browser, so you
+          can pick up where you left off.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="print">Print</h2>
+        <p>
+          Printing should work fine out of the box, but if anything looks funny,
+          check the following:
+        </p>
+        <ul>
+          <li>Make sure the page orientation is set to <b>Landscape</b></li>
+          <li>Hide headers and footers</li>
+          <li>Set margins to <b>Default</b></li>
+        </ul>
+      </section>
+
+      <section id="font">
+        <h2>Change font</h2>
+        <p>Or any local font?</p>
+        <p>
+          The app uses <a href="https://fonts.google.com/">Google Fonts</a>, so
+          if you want a custom font, you have to pick it from there. Just type
+          the name of any Google font (e.g. <a
+            href="https://fonts.google.com/specimen/Fira+Code">Fira Code</a
+          >) into the box, and click <b>Apply</b>.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="privacy">Privacy</h2>
+        <p>
+          Your data is stored in your browser. Nobody can see it except you.
+        </p>
+      </section>
+
+      <section>
+        <h2>Questions?</h2>
+        <p>
+          Email me at <a href="mailto:samfeldstein@pm.me">samfeldstein@pm.me</a
+          >.
+        </p>
+      </section>
+    </div>
   </main>
 </Base>
+
+<style lang="scss">
+  main {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 8rem;
+  }
+
+  .content {
+    flex: 5;
+
+    // Line up with nav top
+    p:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  nav.toc {
+    display: grid;
+    gap: 1.5em;
+
+    text-wrap: nowrap;
+  }
+</style>

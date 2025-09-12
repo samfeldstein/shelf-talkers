@@ -22,11 +22,13 @@ body {
 
 nav {
   @extend .sans-serif;
+  font-size: var(--font-small);
 }
 
 h1 {
-  font-weight: 400;
-  font-size: 2em;
+  font-family: var(--display);
+  font-weight: normal;
+  font-size: 3em;
   text-align: center;
 
   letter-spacing: 0.075em;
@@ -75,9 +77,8 @@ button.default,
   @extend .small-caps;
   padding: 0.5em 0.75em;
   background-color: var(--accent);
-  font-size: inherit;
+  font-size: 0.9em;
   color: white;
-  transition: background 0.2s ease;
 
   &:hover,
   &:focus {
