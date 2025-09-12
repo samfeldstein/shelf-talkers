@@ -1,11 +1,11 @@
 <script setup>
 import { useLogo } from '@/composables/useLogo';
 
-const { logoSrc } = useLogo();
+const { logoSrc, showLogo } = useLogo();
 </script>
 
 <template>
-  <img v-if="logoSrc" :src="logoSrc" alt="Logo" class="logo" />
+  <img v-if="showLogo && logoSrc" :src="logoSrc" alt="Logo" class="logo" />
 </template>
 
 <style scoped>
