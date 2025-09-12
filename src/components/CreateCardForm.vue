@@ -91,4 +91,8 @@ form {
   max-width: 40rem;
   margin: 0 auto;
 }
+
+button.submit {
+  margin-top: 2em;
+}
 </style>

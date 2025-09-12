@@ -14,11 +14,11 @@ const exampleCard = {
 </script>
 
 <template>
-  <div class="cards">
+  <section class="cards">
     <!-- Render the example card if no cards exist -->
     <Card v-if="cards.length === 0" v-bind="exampleCard" />
     <Card v-for="card in cards" :key="card.title" v-bind="card" />
-  </div>
+  </section>
 </template>
 
 <style scoped>
