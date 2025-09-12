@@ -67,7 +67,8 @@ code {
   font-weight: 700;
 }
 
-button.default {
+button.default,
+.button-default {
   @extend .border;
   @extend .focus-outline;
   @extend .sans-serif;

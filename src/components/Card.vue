@@ -1,4 +1,6 @@
 <script setup>
+import Logo from './Logo.vue';
+
 defineProps(['title', 'author', 'blurb', 'attribution'])
 </script>
 
@@ -9,7 +11,7 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
         <h3 class="title">{{ title }}</h3>
         <p class="author">{{ author }}</p>
       </hgroup>
-      <div class="logo">Logo</div>
+      <Logo />
     </header>
     <p class="blurb">{{ blurb }}</p>
     <p class="attribution">{{ attribution }}</p>
