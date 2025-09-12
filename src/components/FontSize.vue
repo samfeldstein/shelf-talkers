@@ -2,10 +2,10 @@
 import { ref, onMounted } from 'vue';
 
 // Reactive state for font sizes
-const titleSize = ref('16');
-const authorSize = ref('12');
-const blurbSize = ref('14');
-const attributionSize = ref('12');
+const titleSize = ref('');
+const authorSize = ref('');
+const blurbSize = ref('');
+const attributionSize = ref('');
 
 // Function to update font sizes in localStorage and CSS variables
 function updateFontSizes() {
@@ -22,7 +22,7 @@ function updateFontSizes() {
 
 // Load saved font sizes on page load
 onMounted(() => {
-  titleSize.value = localStorage.getItem('title-size') ?? '20';
+  titleSize.value = localStorage.getItem('title-size') ?? '18';
   authorSize.value = localStorage.getItem('author-size') ?? '12';
   blurbSize.value = localStorage.getItem('blurb-size') ?? '14';
   attributionSize.value = localStorage.getItem('attribution-size') ?? '12';
