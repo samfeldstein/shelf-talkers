@@ -27,7 +27,6 @@ main {
 img {
   /* Make images responsive */
   max-width: 100%;
-  animation: fadeIn .5s ease-in forwards;
 }
 
 figure {
@@ -61,17 +60,6 @@ summary {
 ::selection {
   background-color: black;
   color: white;
-}
-
-// Animations
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 // Print styles

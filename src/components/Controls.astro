@@ -1,11 +1,12 @@
 ---
 import CreateCardForm from "./CreateCardForm.vue";
 import ClearCards from "./ClearCards.vue";
-import Options from "./Options.astro";
 import Print from "./Print.vue";
+
+import Options from "./Options.astro";
 ---
 
-<section id="controls" class="no-print">
+<section class="controls no-print">
   <CreateCardForm client:load />
   <Options />
   <ClearCards client:load />
@@ -19,5 +20,10 @@ import Print from "./Print.vue";
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
+  }
+
+  section button {
+    flex: 1;
+    text-wrap: nowrap;
   }
 </style>

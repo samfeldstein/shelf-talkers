@@ -21,10 +21,10 @@ onMounted(() => {
 <template>
   <fieldset>
     <legend>Card Size</legend>
-    <label for="card-width">Width (inches)</label>
+    <label for="card-width">Width (in)</label>
     <input id="card-width" type="number" step="0.05" v-model="cardWidth" @input="updateCardSize" />
 
-    <label for="card-height">Height (inches)</label>
+    <label for="card-height">Height (in)</label>
     <input id="card-height" type="number" step="0.05" v-model="cardHeight" @input="updateCardSize" />
   </fieldset>
 </template>

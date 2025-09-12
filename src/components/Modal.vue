@@ -36,10 +36,19 @@ dialog {
 .content {
   overflow: auto;
   padding: 1rem;
+  display: grid;
+  gap: 4rem;
+}
+
+button {
+  text-wrap: nowrap;
+}
+
+button.open {
+  flex: 1;
 }
 
 button.close {
-  margin-top: 4em;
   padding: 1em;
   display: flex;
   justify-self: center;
@@ -53,9 +62,9 @@ button.close {
     color: var(--text-color);
   }
 
-    &:focus-visible {
-      outline: 2px solid currentColor;
-      border-radius: 4px;
-    }
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    border-radius: 4px;
+  }
 }
 </style>
