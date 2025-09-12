@@ -1,9 +1,10 @@
 ---
 import Modal from "./Modal.vue";
 import CardSize from "./CardSize.vue";
+import Preview from "./Preview.vue";
+
 import LogoOptions from "./LogoOptions.astro";
 import Font from "./Font.astro";
-import Preview from "./Preview.astro";
 ---
 
 <Modal label="Options" client:visible>
@@ -14,7 +15,8 @@ import Preview from "./Preview.astro";
   </section>
 
   <section class="preview">
-    <Preview />
+    <!-- Reverts to default logo without this directive -->
+    <Preview client:only="vue" />
   </section>
 </Modal>
 

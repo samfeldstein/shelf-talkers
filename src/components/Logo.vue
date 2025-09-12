@@ -1,15 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { useLogo } from '@/composables/useLogo';
 
-const logoSrc = ref('/compshop-logo.svg'); // Reactive state for the logo source
-
-// Load the saved logo from localStorage on page load
-onMounted(() => {
-  const savedLogo = localStorage.getItem('logo-src');
-  if (savedLogo) {
-    logoSrc.value = savedLogo;
-  }
-});
+const { logoSrc } = useLogo();
 </script>
 
 <template>

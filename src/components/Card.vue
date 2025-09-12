@@ -24,6 +24,8 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
   font-weight: 400;
   padding: 2rem;
   width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
 
   @media screen {
     border-radius: 4px;

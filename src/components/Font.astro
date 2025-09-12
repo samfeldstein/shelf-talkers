@@ -5,6 +5,7 @@ import FontSize from "./FontSize.vue";
 
 <fieldset>
   <legend>Font</legend>
-  <FontFamily client:visible />
+  <!-- Reverts to default without this directive -->
+  <FontFamily client:only="vue" />
   <FontSize client:load />
 </fieldset>

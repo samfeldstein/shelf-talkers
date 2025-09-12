@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { useLogo } from '@/composables/useLogo';
 
-const logoSrc = ref('');
+const { setLogo } = useLogo();
 
 // Handle file upload
 function handleFileUpload(event) {
@@ -9,8 +9,7 @@ function handleFileUpload(event) {
   if (file) {
     const reader = new FileReader();
     reader.onload = () => {
-      logoSrc.value = reader.result; // Save the base64 image
-      localStorage.setItem('logo-src', reader.result); // Save to localStorage
+      setLogo(reader.result); // Update the shared state and localStorage
     };
     reader.readAsDataURL(file);
   }
