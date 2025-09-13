@@ -16,111 +16,109 @@ const description = "Help and tips for using the Shelf Talkers app.";
   </header>
   <main id="main">
     <HelpTocMobile />
-    <SideBar>
-      <nav class="toc">
-        <a href="#basics">Basic Usage</a>
-        <a href="#print">Print</a>
-        <a href="#font">Change font</a>
-        <a href="#logo">Change logo</a>
-        <a href="#privacy">Privacy</a>
-      </nav>
-    </SideBar>
+    <SideBar />
     <div class="content">
       <section class="intro">
         <p>
           Hi, I’m <a href="https://samfeldstein.xyz"
             ><strong>Sam Feldstein</strong></a
-          >. I’m a bookseller at <a href="https://compositionshop.com/">
+          >. I’m an amateur web developer, and a bookseller at <a
+            href="https://compositionshop.com/"
+          >
             Composition shop</a
-          > in Longmont, CO. I built this app because making shelf talkers is a bit
-          of a pain, especially if you’re doing it with a word processor. I wanted
-          to a tool that would ensure consistent formatting, was somewhat customizable,
-          and easy to use.
+          > in Longmont, CO.
         </p>
 
         <p>
-          The app is pretty simple, and offers minimal customization options. If
-          you’re looking for a fully customizable template, you’re better off
-          using Canva or Figma.
+          I built this app partly to be helpful, but mostly for practice. It’s
+          pretty simple, and offers some customization, but if you want full
+          control over your shelf-talker, you’re better off using
+          <a href="https://www.canva.com/">Canva</a> or <a
+            href="https://www.figma.com">Figma</a
+          >.
         </p>
 
         <p>
-          The code is <a
-            href="https://github.com/samfeldstein/shelf-talkers-vue"
-            >open source</a
-          >, and pull requests are welcome. You can also fork it and build your
-          own version.
-        </p>
-
-        <p>
-          If you have questions or feedback, you can email me at <a
-            href="mailto:samfeldstein@pm.me">samfeldstein@pm.me</a
+          If you have questions or feedback, just <a
+            href="mailto:samfeldstein@pm.me">shoot me an email</a
           >.
         </p>
       </section>
 
-      <section>
-        <h2 id="basics">Basic usage</h2>
+      <section id="basics">
+        <h2>Basics</h2>
         <p>
           This app is best used on a desktop, but it should work fine on your
           smartphone.
         </p>
 
         <p>
-          Click any field to edit. <kbd>CmdP</kbd> to print on Mac.
-          <kbd>CtrlP</kbd> on Windows.
-        </p>
-
-        <p>
           <strong
             >Card sizes on the webpage do not correlate to card sizes on the
             printed page.</strong
-          > That's because the card sizes on the webpage morph to fit different screens.
-          Make sure you preview the printed page before you print.
+          > That’s because the card sizes on the webpage morph to fit different screens.
         </p>
+
         <p>
           Any changes you make are stored automatically in the browser, so you
           can pick up where you left off.
         </p>
+
+        <p>
+          Hit <kbd>Cmd/Ctrl + P</kbd> to print, or click <b>Print</b>.
+        </p>
       </section>
 
-      <section>
-        <h2 id="print">Print</h2>
+      <section id="font">
+        <h2>Font</h2>
+        <p>
+          You can enter the name of any font on <a
+            href="https://fonts.google.com/">Google Fonts</a
+          > or in your font manager. The name of the font and the name you type must
+          match exactly.
+        </p>
+
+        <p>
+          Once you’ve entered a name, the font will automatically apply to your talkers.
+        </p>
+      </section>
+
+      <section id="print">
+        <h2>Print</h2>
         <p>
           Printing should work fine out of the box, but if anything looks funny,
           check the following:
         </p>
         <ul>
-          <li>Make sure the page orientation is set to <b>Landscape</b></li>
+          <li>Set the page orientation to <b>Landscape</b></li>
           <li>Hide headers and footers</li>
           <li>Set margins to <b>Default</b></li>
         </ul>
-      </section>
 
-      <section id="font">
-        <h2>Change font</h2>
-        <p>Or any local font?</p>
         <p>
-          The app uses <a href="https://fonts.google.com/">Google Fonts</a>, so
-          if you want a custom font, you have to pick it from there. Just type
-          the name of any Google font (e.g. <a
-            href="https://fonts.google.com/specimen/Fira+Code">Fira Code</a
-          >) into the box, and click <b>Apply</b>.
+          The app will not tell you if your cards are too big for the page, or
+          if a card’s content is overflowing its borders, or anything like that.
+          Make sure you preview the printed page before you print.
         </p>
       </section>
 
-      <section>
-        <h2 id="privacy">Privacy</h2>
+      <section id="privacy">
+        <h2>Privacy</h2>
         <p>
-          Your data is stored in your browser. Nobody can see it except you.
+          This app’s code is <a
+            href="https://github.com/samfeldstein/shelf-talkers">open source</a
+          >, meaning you can see everything that’s going on under the hood.
         </p>
-      </section>
 
-      <section>
-        <h2>Questions?</h2>
         <p>
-          Email me at <a href="mailto:samfeldstein@pm.me">samfeldstein@pm.me</a
-          >.
+          Your shelf-talker data is stored in your browser. Nobody can see it
+          except you.
+        </p>
+
+        <p>
+          The app loads fonts with Google Fonts, which can expose your IP
+          address and other information to Google. This may be a concern for
+          some people.
         </p>
       </section>
     </div>
@@ -137,18 +135,12 @@ const description = "Help and tips for using the Shelf Talkers app.";
   }
 
   .content {
+    max-width: 50rem;
     flex: 5;
 
     // Line up with nav top
     p:first-of-type {
       margin-top: 0;
     }
-  }
-
-  nav.toc {
-    display: grid;
-    gap: 1.5em;
-
-    text-wrap: nowrap;
   }
 </style>

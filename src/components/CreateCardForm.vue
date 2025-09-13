@@ -52,7 +52,7 @@ function submit() {
 <template>
   <Modal label="Create Talker">
     <form @submit.prevent="submit" aria-labelledby="form-title">
-      <fieldset>
+      <fieldset class="default">
         <legend id="form-title">Create Talker</legend>
 
         <div>

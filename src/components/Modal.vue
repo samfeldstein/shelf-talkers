@@ -40,10 +40,6 @@ dialog {
   gap: 4rem;
 }
 
-button {
-  text-wrap: nowrap;
-}
-
 button.open {
   flex: 1;
 }

@@ -1,11 +1,30 @@
 <aside>
-  <slot/>
+  <nav>
+    <a href="#basics">Basics</a>
+    <a href="#font">Font</a>
+    <a href="#print">Print</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
 </aside>
 
 <style>
   aside {
+    position: relative;
+
+    padding-left: 1em;
+
     @media screen and (max-width: 800px) {
       display: none;
     }
+  }
+
+  nav {
+    position: sticky;
+    top: 1rem;
+
+    display: grid;
+    gap: 1em;
+
+    text-wrap: nowrap;
   }
 </style>

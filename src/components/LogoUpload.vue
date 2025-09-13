@@ -17,7 +17,7 @@ function handleFileUpload(event) {
 </script>
 
 <template>
-  <label class="button-default" for="logo-upload">Change Logo</label>
+  <label class="button default" for="logo-upload">Change Logo</label>
   <input id="logo-upload" type="file" accept="image/*" @change="handleFileUpload" />
 </template>
 

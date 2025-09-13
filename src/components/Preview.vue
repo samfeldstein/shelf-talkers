@@ -4,7 +4,7 @@ import Card from './Card.vue';
 
 <template>
   <Card class="preview" title="The Road" author="Cormac McCarthy"
-    blurb="This card shows you what your shelf talkers will look like when printed."
+    blurb="This is what your shelf talkers will look like when printed."
     attribution="Sam Feldstein, Bookseller @ Composition Shop" />
 </template>
 
@@ -15,7 +15,9 @@ import Card from './Card.vue';
   margin: 0 auto;
   padding: 1em;
   width: var(--card-width);
+  max-width: unset;
   height: var(--card-height);
+  min-height: unset;
   box-shadow: unset;
 }
 </style>
