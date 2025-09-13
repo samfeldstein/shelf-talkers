@@ -1,0 +1,79 @@
+@use 'utils';
+
+button,
+.button {
+  font-family: inherit;
+  font-style: italic;
+  font-size: var(--font-small);
+  text-wrap: nowrap;
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  border: 1px dotted #bfa76a;
+  border-radius: 10px;
+  padding: 0.75em 1.5em;
+
+  background: linear-gradient(180deg, #f8f5e9 70%, #f3e9d2 100%);
+  color: #6b4c1b;
+
+  box-shadow: 0 2px 4px rgba(120, 90, 40, 0.07);
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(180deg, #f3e9d2 0%, #f8f5e9 100%);
+    border-color: #a68a4a;
+    border-style: solid;
+    box-shadow: 0 4px 10px rgba(120, 90, 40, 0.13);
+    outline: none;
+  }
+
+  &:active {
+    background: #f3e9d2;
+    box-shadow: 0 1px 2px rgba(120, 90, 40, 0.09);
+  }
+}
+
+fieldset {
+  @extend .border;
+
+  &.default {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+
+    &>div {
+      display: grid;
+      gap: 0.5em;
+    }
+  }
+}
+
+legend {
+  font-size: var(--font-small);
+  font-family: var(--sans-serif);
+  letter-spacing: 0.2em;
+
+  padding: 0 0.5em;
+}
+
+::selection {
+  background-color: black;
+  color: white;
+}
+
+input,
+textarea {
+  @extend .border;
+  @extend .focus-outline;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5em;
+}
+
+label {
+  @extend .sans-serif;
+  font-weight: 700;
+  font-size: var(--font-small);
+  margin-top: 1em;
+}

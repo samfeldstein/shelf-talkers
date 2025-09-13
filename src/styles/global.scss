@@ -8,6 +8,10 @@ nav {
   font-size: var(--font-small);
 }
 
+header.page {
+  margin-bottom: 4rem;
+}
+
 h1 {
   font-family: var(--display);
   font-weight: normal;
@@ -28,21 +32,25 @@ h2 {
 
 a,
 .a {
+  width: fit-content; // If removed, will flex sometimes and hover effect extends past text
+  
   font-variant: small-caps;
   text-transform: lowercase;
   text-decoration: none;
   letter-spacing: 0.07em;
+
   color: currentColor;
   border-radius: 4px;
 
-  &:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.1em;
-  }
+  transition: background-color 0.2s, color 0.2s;
 
-  &:focus-visible {
-    outline: 1px solid currentColor;
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 0 #e6d3a3;
+    background-color: #f9eec7;
+    color: #6b4c1b;
+
+    outline: none;
   }
 }
 
@@ -50,91 +58,4 @@ kbd,
 code {
   font-family: inherit;
   font-weight: 700;
-}
-
-button,
-.button {
-  font-family: inherit;
-  font-style: italic;
-  font-size: var(--font-small);
-  text-wrap: nowrap;
-  letter-spacing: 0.01em;
-
-  cursor: pointer;
-
-  border: 1px dashed #bfa76a;
-  border-radius: 10px;
-  padding: 0.75em 1.5em;
-
-  background: linear-gradient(180deg, #f8f5e9 70%, #f3e9d2 100%);
-  color: #6b4c1b;
-
-  box-shadow: 0 2px 4px rgba(120, 90, 40, 0.07);
-
-  transition:
-    background 0.18s,
-    box-shadow 0.18s,
-    transform 0.09s,
-    border-color 0.18s;
-
-  &:hover,
-  &:focus {
-    background: linear-gradient(180deg, #f3e9d2 0%, #f8f5e9 100%);
-    border-color: #a68a4a;
-    box-shadow: 0 4px 10px rgba(120, 90, 40, 0.13);
-    outline: none;
-  }
-
-  &:active {
-    background: #f3e9d2;
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px rgba(120, 90, 40, 0.09);
-  }
-}
-
-input,
-textarea {
-  @extend .border;
-  @extend .focus-outline;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0.5em;
-}
-
-label {
-  @extend .sans-serif;
-  font-weight: 700;
-  font-size: var(--font-small);
-  margin-top: 1em;
-}
-
-fieldset {
-  @extend .border;
-
-  &.default {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25em;
-
-    &>div {
-      display: grid;
-      gap: 0.5em;
-    }
-  }
-
-
-
-}
-
-legend {
-  font-size: var(--font-small);
-  font-family: var(--sans-serif);
-  letter-spacing: 0.2em;
-
-  padding: 0 0.5em;
-}
-
-::selection {
-  background-color: black;
-  color: white;
 }
