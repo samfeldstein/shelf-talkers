@@ -21,6 +21,7 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
 <style lang="scss" scoped>
 .card {
   font-family: var(--font);
+  font-size: 0.85em;
   font-weight: 400;
   padding: 2rem;
   width: 100%;
@@ -57,7 +58,6 @@ hgroup {
 }
 
 h3 {
-  font-size: var(--font-large);
   font-weight: 700;
   margin: 0 0 0.25rem 0;
 
@@ -68,7 +68,7 @@ h3 {
 
 .author {
   margin: 0;
-  font-size: var(--font-small);
+  font-size: 0.8em;
   font-style: italic;
 
   @media print {
@@ -77,7 +77,6 @@ h3 {
 }
 
 .blurb {
-  font-size: var(--font-size-body);
   line-height: 1.3;
 
   @media print {
@@ -86,7 +85,7 @@ h3 {
 }
 
 .attribution {
-  font-size: var(--font-small);
+  font-size: 0.8em;
   margin: 0;
   text-align: right;
   font-style: italic;
