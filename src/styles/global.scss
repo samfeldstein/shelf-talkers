@@ -15,10 +15,10 @@ header.page {
 h1 {
   font-family: var(--display);
   font-weight: normal;
-  font-size: 3em;
+  font-size: 1.75em;
+  font-style: italic;
+  letter-spacing: 0.1em;
   text-align: center;
-
-  letter-spacing: 0.075em;
 }
 
 h2 {
@@ -33,7 +33,7 @@ h2 {
 a,
 .a {
   width: fit-content; // If removed, will flex sometimes and hover effect extends past text
-  
+
   font-variant: small-caps;
   text-transform: lowercase;
   text-decoration: none;
@@ -47,8 +47,8 @@ a,
   &:hover,
   &:focus {
     box-shadow: 0 2px 0 #e6d3a3;
-    background-color: #f9eec7;
-    color: #6b4c1b;
+    background-color: var(--highlight);
+    color: var(--ink);
 
     outline: none;
   }
@@ -58,4 +58,9 @@ kbd,
 code {
   font-family: inherit;
   font-weight: 700;
+}
+
+::selection {
+  background-color: var(--highlight);
+  color: var(--ink);
 }

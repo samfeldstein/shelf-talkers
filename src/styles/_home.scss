@@ -1,12 +1,27 @@
 @use 'utils';
 
+h1 {
+  .one {
+    font-size: 1.15em;
+    word-spacing: 0.25em;
+  }
+
+  .two {
+    font-variant: small-caps;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: 0.7em;
+  }
+}
+
 button,
 .button {
   font-family: inherit;
   font-style: italic;
   font-size: var(--font-small);
   text-wrap: nowrap;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.1em;
 
   cursor: pointer;
 
@@ -55,11 +70,6 @@ legend {
   letter-spacing: 0.2em;
 
   padding: 0 0.5em;
-}
-
-::selection {
-  background-color: black;
-  color: white;
 }
 
 input,

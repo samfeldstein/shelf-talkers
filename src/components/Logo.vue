@@ -10,7 +10,7 @@ const { logoSrc, showLogo } = useLogo();
 
 <style scoped>
 img {
-  max-height: 3em;
+  max-height: 2.75em;
   width: auto;
   position: absolute;
   top: -10px;

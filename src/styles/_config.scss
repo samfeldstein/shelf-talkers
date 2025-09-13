@@ -5,14 +5,19 @@
     'URW Palladio L',
     P052,
     serif;
-  --display: 'Segoe Print',
-    'Bradley Hand',
-    Chilanka,
-    TSCu_Comic,
-    casual,
-    cursive;
+
+  --display: Didot,
+    'Bodoni MT',
+    'Noto Serif Display',
+    'URW Palladio L',
+    P052,
+    Sylfaen,
+    serif;
+
   --monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+
   --sans-serif: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  
   --font-size-body: clamp(1rem, 5vw, 1.5rem);
   --font-small: calc(var(--font-size-body) * 0.9);
   --font-large: calc(var(--font-size-body) * 1.2);
@@ -21,4 +26,6 @@
   // Colors
   --text-color: black;
   --accent: #575757;
+  --ink: #6b4c1b;
+  --highlight: #f9eec7;
 }
