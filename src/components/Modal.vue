@@ -45,22 +45,9 @@ button.open {
 }
 
 button.close {
-  padding: 1em;
-  display: flex;
+  width: fit-content;
   justify-self: center;
-  border: none;
-
-  font-size: var(--font-large);
-  background: none;
-  color: var(--accent);
-
-  &:hover {
-    color: var(--text-color);
-  }
-
-  &:focus-visible {
-    outline: 2px solid currentColor;
-    border-radius: 4px;
-  }
+  padding: 0.25em;
+  aspect-ratio: 1/1;
 }
 </style>
