@@ -3,6 +3,13 @@
 @use 'utils';
 @use 'print';
 
+h1 {
+  font-variant: small-caps;
+    font-size: clamp(3rem, 15vw, 7rem);
+    font-weight: 100;
+    letter-spacing: 0.1em;
+}
+
 h2 {
   font-weight: 400;
   font-style: italic;
@@ -16,8 +23,6 @@ a,
 .a {
   width: fit-content; // If removed, will flex sometimes and hover effect extends past text
 
-  font-variant: small-caps;
-  text-transform: lowercase;
   text-decoration: none;
   letter-spacing: 0.07em;
 

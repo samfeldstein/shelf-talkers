@@ -7,8 +7,45 @@ import "@/styles/_home.scss";
 ---
 
 <Base pageTitle="Shelf Talkers" prefetch="help">
+	<header>
+		<hgroup>
+			<p>
+				<span>an app by</span>
+				<a class="name" href="https://samfeldstein.xyz">Sam Feldstein ☞</a>
+			</p>
+			<h1>Shelf<br />Talkers</h1>
+		</hgroup>
+	</header>
 	<main id="main">
 		<Controls />
 		<CardContainer client:only="vue" />
 	</main>
 </Base>
+
+<style lang="scss">
+	hgroup p {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+
+		margin: 0;
+
+		font-size: var(--font-smaller);
+		text-transform: lowercase;
+	}
+
+	h1 {
+		text-wrap: nowrap;
+		line-height: 1;
+
+		width: 100%;
+		max-width: 90%;
+		margin: 0.5em auto;
+
+		&::first-letter {
+			font-family: var(--font-dropcap);
+			font-size: 2.25em;
+			float: left;
+		}
+	}
+</style>
