@@ -6,16 +6,7 @@ import Controls from "@/components/Controls.astro";
 import "@/styles/_home.scss";
 ---
 
-<Base pageTitle="Home" prefetch="help">
-	<header class="page no-print">
-		<nav>
-			<a href="/help">Help</a>
-		</nav>
-			<h1>
-				<div class="one">Shelf Talker</div>
-				<div class="two">Generator</div>
-			</h1>
-	</header>
+<Base pageTitle="Shelf Talkers" prefetch="help">
 	<main id="main">
 		<Controls />
 		<CardContainer client:only="vue" />

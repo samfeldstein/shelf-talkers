@@ -23,12 +23,15 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
   font-family: var(--font);
   font-size: 0.85em;
   font-weight: 400;
+
   padding: 2rem;
   width: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
 
   @media screen {
+    background-color: oklch(0.99 0 0);
+
     border-radius: 4px;
     max-width: 40rem;
     min-height: 15rem;

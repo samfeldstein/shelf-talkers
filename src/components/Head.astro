@@ -3,7 +3,7 @@ import "@/styles/global.scss";
 // Props
 const siteTitle = "Shelf Talkers";
 const ogImage = "https://shelftalkers.samfeldstein.xyz/open-graph-image.jpg";
-const { pageTitle, prefetch, description } = Astro.props;
+const { pageTitle = siteTitle, prefetch, description } = Astro.props;
 ---
 
 <head>
@@ -15,7 +15,7 @@ const { pageTitle, prefetch, description } = Astro.props;
   <link rel="prefetch" href=`/${prefetch}` />
 
   <!-- Site info -->
-  <title>{pageTitle} | {siteTitle}</title>
+  <title>{pageTitle}</title>
   <meta
     name="description"
     content={description ||

@@ -1,20 +1,5 @@
 @use 'utils';
 
-h1 {
-  .one {
-    font-size: 1.15em;
-    word-spacing: 0.25em;
-  }
-
-  .two {
-    font-variant: small-caps;
-    font-style: normal;
-    font-weight: 700;
-    text-transform: lowercase;
-    letter-spacing: 0.7em;
-  }
-}
-
 button,
 .button {
   font-family: inherit;

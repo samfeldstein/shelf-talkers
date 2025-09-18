@@ -8,7 +8,7 @@ const { logoSrc, showLogo } = useLogo();
   <img v-if="showLogo && logoSrc" :src="logoSrc" alt="Logo" class="logo" />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 img {
   max-height: 2.75em;
   width: auto;
