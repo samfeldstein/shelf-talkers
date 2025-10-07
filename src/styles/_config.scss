@@ -1,9 +1,7 @@
 :root {
   // Fonts
-  --font-body: 'Cormorant Garamond', serif;
+  --font-body: 'Cormorant Garamond', 'Cormorant Garamond Fallback';
   --font-dropcap: 'Grusskarten Gotisch';
-
-  --sans-serif: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
 
   --font-size-body: clamp(1rem, 5vw, 1.5rem);
   --font-smaller: calc(var(--font-size-body) * 0.7);
