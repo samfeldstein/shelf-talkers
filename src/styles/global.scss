@@ -4,10 +4,17 @@
 @use 'print';
 
 h1 {
-  font-variant: small-caps;
   font-size: clamp(3rem, 15vw, 7rem);
   font-weight: 100;
   letter-spacing: 0.1em;
+  text-align: center;
+
+  margin: 0.5em;
+
+  &::first-letter {
+    font-family: var(--font-dropcap);
+    font-size: 2em;
+  }
 }
 
 h2 {
