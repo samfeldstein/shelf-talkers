@@ -1,0 +1,29 @@
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base
+  pageTitle="404 – Page Not Found | Shelf Talkers"
+  description="404 – Page Not Found"
+  prefetch=""
+>
+  <header>
+    <nav><a href="/">← Home</a></nav>
+    <h1>Page Not Found</h1>
+  </header>
+
+  <main>
+    <p>Woops, it looks like this page doesn’t exist. If you think this is a mistake, please <a href="mailto:samfeldstein@pm.me">email me</a>.</p>
+  </main>
+</Base>
+
+<style>
+  nav {
+    font-size: var(--font-small);
+  }
+  
+  main a {
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+</style>
