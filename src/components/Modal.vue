@@ -51,7 +51,7 @@ button.close {
 
   font-size: inherit;
 
-  &:focus {
+  &:focus-visible {
     outline: 1px solid var(--ink);
   }
 }
