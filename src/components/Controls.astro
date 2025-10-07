@@ -12,6 +12,7 @@ import Options from "./Options.astro";
     <Options />
     <ClearCards client:load />
     <Print client:load />
+    <a href="/help" class="button default">Help</a>
   </fieldset>
 </section>
 
@@ -30,7 +31,11 @@ import Options from "./Options.astro";
     gap: 0.5rem;
   }
 
-  button {
+  button, .button {
     flex: 1;
+  }
+
+  .button {
+    text-align: center;
   }
 </style>
