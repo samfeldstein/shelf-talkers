@@ -45,9 +45,14 @@ button.open {
 }
 
 button.close {
-  width: fit-content;
-  justify-self: center;
-  padding: 0.25em;
-  aspect-ratio: 1/1;
+  border: none;
+  padding: 1em;
+  background: none;
+
+  font-size: inherit;
+
+  &:focus {
+    outline: 1px solid var(--ink);
+  }
 }
 </style>
