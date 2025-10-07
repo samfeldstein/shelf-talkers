@@ -9,34 +9,34 @@ button,
   color: var(--ink);
 
   &.default {
-      font-family: inherit;
-      font-style: italic;
-      font-size: var(--font-small);
-      text-wrap: nowrap;
-      letter-spacing: 0.1em;
-  
-      border: 1px dotted var(--gold);
-      
-      padding: 0.75em 1.5em;
-  
-      background: linear-gradient(180deg, var(--page-color) 70%, var(--highlight) 100%);
-      
-      box-shadow: 0 2px 4px var(--accent2);
-  
-      &:hover,
-      &:focus {
-        background: linear-gradient(180deg, var(--highlight) 0%, var(--page-color) 100%);
-        border-color: var(--ink);
-        border-style: solid;
-        box-shadow: 0 4px 10px var(--accent2);
-        outline: none;
-      }
-  
-      &:active {
-        background: var(--highlight);
-        box-shadow: 0 1px 2px var(--accent2);
-      }
+    font-family: inherit;
+    font-style: italic;
+    font-size: var(--font-small);
+    text-wrap: nowrap;
+    letter-spacing: 0.1em;
+
+    border: 1px dotted var(--gold);
+
+    padding: 0.75em 1.5em;
+
+    background: linear-gradient(180deg, var(--page-color) 70%, var(--highlight) 100%);
+
+    box-shadow: 0 2px 4px var(--accent2);
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(180deg, var(--highlight) 0%, var(--page-color) 100%);
+      border-color: var(--ink);
+      border-style: solid;
+      box-shadow: 0 4px 10px var(--accent2);
+      outline: none;
     }
+
+    &:active {
+      background: var(--highlight);
+      box-shadow: 0 1px 2px var(--accent2);
+    }
+  }
 }
 
 fieldset {
@@ -55,8 +55,8 @@ fieldset {
 }
 
 legend {
-  font-size: var(--font-small);
-  font-family: var(--sans-serif);
+  @extend .small-caps, .inline;
+  font-size: var(--font-smaller);
   letter-spacing: 0.2em;
 
   padding: 0 0.5em;
@@ -72,8 +72,7 @@ textarea {
 }
 
 label {
-  @extend .sans-serif;
   font-weight: 700;
-  font-size: var(--font-smaller);
+  font-size: var(--font-small);
   margin-top: 1em;
 }

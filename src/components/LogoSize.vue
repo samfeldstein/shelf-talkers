@@ -18,6 +18,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <label for="logo-height">Logo Height (px)</label>
+  <label for="logo-height">Logo Height</label>
   <input id="logo-height" type="number" step="1" v-model="logoHeight" @input="updateLogoHeight" />
 </template>

@@ -33,15 +33,15 @@ onMounted(() => {
 
 <template>
 
-  <label for="title-size">Title Size (px)</label>
+  <label for="title-size">Title Size</label>
   <input id="title-size" type="number" step="0.5" v-model="titleSize" @input="updateFontSizes" />
 
-  <label for="author-size">Author Size (px)</label>
+  <label for="author-size">Author Size</label>
   <input id="author-size" type="number" step="0.5" v-model="authorSize" @input="updateFontSizes" />
 
-  <label for="blurb-size">Blurb Size (px)</label>
+  <label for="blurb-size">Blurb Size</label>
   <input id="blurb-size" type="number" step="0.5" v-model="blurbSize" @input="updateFontSizes" />
 
-  <label for="attribution-size">Attribution Size (px)</label>
+  <label for="attribution-size">Attribution Size</label>
   <input id="attribution-size" type="number" step="0.5" v-model="attributionSize" @input="updateFontSizes" />
 </template>

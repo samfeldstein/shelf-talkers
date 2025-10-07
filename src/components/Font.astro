@@ -5,7 +5,16 @@ import FontSize from "./FontSize.vue";
 
 <fieldset class="default">
   <legend>Font</legend>
+  <p>Sized in pixels</p>
   <!-- Reverts to default without this directive -->
   <FontFamily client:only="vue" />
   <FontSize client:load />
 </fieldset>
+
+<style scoped>
+  p {
+    font-size: var(--font-smaller);
+    font-style: italic;
+    text-align: center;
+  }
+</style>

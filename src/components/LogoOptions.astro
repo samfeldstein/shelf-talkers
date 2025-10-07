@@ -6,7 +6,16 @@ import Size from "./LogoSize.vue";
 
 <fieldset class="default">
   <legend>Logo</legend>
+  <p>Sized in pixels</p>
+  <Size client:visible />
   <Upload client:visible />
   <Toggle client:visible />
-  <Size client:visible />
 </fieldset>
+
+<style scoped>
+  p {
+    font-size: var(--font-smaller);
+    font-style: italic;
+    text-align: center;
+  }
+</style>
