@@ -12,10 +12,10 @@
 
   // Colors
   --page-color: oklch(0.9864 0.024 96.56);
-  --text-color: black;
-  --accent: #575757;
-  --accent2: rgba(120, 90, 40, 0.13);
-  --gold: #bfa76a;
-  --ink: #6b4c1b;
-  --highlight: #f9eec7;
+  --text-color: oklch(0 0 0);
+  --accent: oklch(0.4568 0 0);
+  --accent2: oklch(0.4881 0.0775 77.93 / 13%);
+  --gold: oklch(0.7355 0.0845 88.79);
+  --ink: oklch(0.4404 0.0768 75.48);
+  --highlight: oklch(0.948 0.0521 94.1);
 }
