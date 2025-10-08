@@ -31,7 +31,7 @@ const { pageTitle = siteTitle, prefetch, description } = Astro.props;
   <link rel="prefetch" href=`/${prefetch}` />
 
   <!-- Site info -->
-  <title>{pageTitle}</title>
+  <title>{pageTitle} | {siteTitle}</title>
   <meta
     name="description"
     content={description ||
