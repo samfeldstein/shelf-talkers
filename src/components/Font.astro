@@ -6,9 +6,9 @@ import FontSize from "./FontSize.vue";
 <fieldset class="default">
   <legend>Font</legend>
   <p>Sized in pixels</p>
-  <!-- Reverts to default without this directive -->
+  <!-- Printed font reverts on page load otherwise -->
   <FontFamily client:only="vue" />
-  <FontSize client:load />
+  <FontSize client:only="vue" />
 </fieldset>
 
 <style scoped>
