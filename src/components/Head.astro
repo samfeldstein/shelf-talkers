@@ -43,7 +43,7 @@ const { pageTitle = siteTitle, prefetch, description } = Astro.props;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:image" content=`${ogImage}` />
-  <meta property="og:url" content={Astro.url.href} />
+  <meta property="og:url" content={Astro.url} />
 
   <!-- Twitter markup (also handles Bluesky) -->
   <meta name="twitter:title" content=`${pageTitle} | ${siteTitle}` />

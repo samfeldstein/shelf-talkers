@@ -15,13 +15,16 @@ const exampleCard = {
 
 <template>
   <section class="cards">
+    <h2>Cards</h2>
     <!-- Render the example card if no cards exist -->
     <Card v-if="cards.length === 0" v-bind="exampleCard" />
     <Card v-for="card in cards" :key="card.title" v-bind="card" />
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/styles/utils';
+
 .cards {
 
   display: flex;
@@ -35,5 +38,9 @@ const exampleCard = {
     grid-auto-rows: var(--card-height);
     gap: 0;
   }
+}
+
+h2 {
+  @extend .visually-hidden;
 }
 </style>

@@ -8,6 +8,7 @@ import Options from "./Options.astro";
 
 <section class="controls no-print">
   <fieldset>
+    <legend>Controls</legend>
     <CreateCardForm client:load />
     <Options />
     <ClearCards client:load />
@@ -16,7 +17,9 @@ import Options from "./Options.astro";
   </fieldset>
 </section>
 
-<style>
+<style lang="scss">
+  @use "@/styles/utils";
+
   section {
     margin: 0 auto 6rem auto;
     max-width: 90rem;
@@ -31,7 +34,12 @@ import Options from "./Options.astro";
     gap: 0.5rem;
   }
 
-  button, .button {
+  legend {
+    @extend .visually-hidden;
+  }
+
+  button,
+  .button {
     flex: 1;
   }
 
