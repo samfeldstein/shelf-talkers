@@ -56,6 +56,11 @@ header {
   gap: 1rem;
 }
 
+hgroup {
+  // See if this fixes mobile spacing issue
+  flex: 1;
+}
+
 h3 {
   font-weight: 700;
   margin: 0 0 0.25rem 0;
