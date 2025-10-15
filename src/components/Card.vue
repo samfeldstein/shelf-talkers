@@ -49,15 +49,13 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
 header {
   border-bottom: 1px solid;
   padding-bottom: 0.5em;
-  display: flex;
-  justify-content: space-between;
   // For logo positioning
   position: relative;
 }
 
 hgroup {
   // Prevent collision with logo
-  max-width: 85%;
+  margin-right: 1rem;
 }
 
 h3 {
