@@ -12,9 +12,6 @@ const { logoSrc, showLogo } = useLogo();
 img {
   max-height: 2.75em;
   width: auto;
-  position: absolute;
-  top: -10px;
-  right: 0;
 
   @media print {
     max-height: var(--logo-height);

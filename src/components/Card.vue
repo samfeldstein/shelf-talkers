@@ -24,7 +24,7 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
   font-size: 0.85em;
   font-weight: 400;
 
-  padding: 2rem;
+  padding: 1rem 2rem;
   width: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -49,13 +49,11 @@ defineProps(['title', 'author', 'blurb', 'attribution'])
 header {
   border-bottom: 1px solid;
   padding-bottom: 0.5em;
-  // For logo positioning
-  position: relative;
-}
 
-hgroup {
-  // Prevent collision with logo
-  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 h3 {
