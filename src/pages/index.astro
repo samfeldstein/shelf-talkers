@@ -6,12 +6,25 @@ import Controls from "@/components/Controls.astro";
 import "@/styles/_home.scss";
 ---
 
-<Base pageTitle="Home" prefetch="help" description="A simple web app for formatting and printing shelf-talkers.">
+<Base
+	pageTitle="Home"
+	prefetch="help"
+	description="A simple web app for formatting and printing shelf-talkers."
+>
 	<header class="no-print">
 		<hgroup>
 			<p>
 				<span>an app by</span>
-				<a class="name" href="https://samfeldstein.xyz">Sam Feldstein →</a>
+				<a class="name" href="https://samfeldstein.xyz"
+					>Sam Feldstein <svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 640 640"
+						><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+						<path
+							d="M528 320c0 114.9-93.1 208-208 208s-208-93.1-208-208 93.1-208 208-208 208 93.1 208 208m-464 0c0 141.4 114.6 256 256 256s256-114.6 256-256S461.4 64 320 64 64 178.6 64 320m387.3 11.3c6.2-6.2 6.2-16.4 0-22.6l-104-104c-4.6-4.6-11.5-5.9-17.4-3.5s-9.9 8.3-9.9 14.8v72H216c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h104v72c0 6.5 3.9 12.3 9.9 14.8s12.9 1.1 17.4-3.5z"
+						></path></svg
+					></a
+				>
 			</p>
 			<h1>Talkers</h1>
 		</hgroup>
@@ -35,5 +48,15 @@ import "@/styles/_home.scss";
 			font-size: var(--font-smaller);
 			text-transform: lowercase;
 		}
+	}
+
+	a.name {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.15em;
+	}
+
+	svg {
+		width: 1em;
 	}
 </style>
