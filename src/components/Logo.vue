@@ -12,6 +12,7 @@ const { logoSrc, showLogo } = useLogo();
 img {
   max-height: 2.75em;
   width: auto;
+  flex: 0; // Otherwise, grows to fill space on Safari and mobile, making title and author wrap. Title and auther (hgroup) have flex 1
 
   @media print {
     max-height: var(--logo-height);
