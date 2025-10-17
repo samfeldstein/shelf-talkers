@@ -57,7 +57,6 @@ header {
 }
 
 hgroup {
-  // See if this fixes mobile spacing issue
   flex: 1;
 }
 
