@@ -9,7 +9,7 @@ import Card from './Card.vue';
 </template>
 
 <style scoped>
-.preview {
+.card.preview {
   border-radius: unset;
   border: 1px solid var(--accent);
   margin: 0 auto;
@@ -23,7 +23,7 @@ import Card from './Card.vue';
 </style>
 
 <style lang="scss">
-.preview {
+.card.preview {
   h3 {
     font-size: var(--title-size);
   }

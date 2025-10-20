@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 
-const fontFamily = ref("Courier Prime");
+const fontFamily = ref("Georgia");
 
 // Function to update the font family
 function updateFontFamily() {
