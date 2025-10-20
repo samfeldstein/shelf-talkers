@@ -9,14 +9,14 @@ import Font from "./Font.astro";
 
 <Modal label="Options" client:visible>
   <section class="options">
-    <CardSize client:visible />
+    <CardSize client:only="vue" />
     <LogoOptions />
     <Font />
   </section>
 
   <section class="preview">
     <!-- Reverts to default logo without this directive -->
-    <Preview client:visible />
+    <Preview client:only="vue" />
   </section>
 </Modal>
 

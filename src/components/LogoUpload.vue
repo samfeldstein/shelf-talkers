@@ -17,8 +17,11 @@ function handleFileUpload(event) {
 </script>
 
 <template>
+
   <label class="button default" for="logo-upload">Change Logo</label>
   <input id="logo-upload" type="file" accept="image/*" @change="handleFileUpload" />
+  <p>5 MB or less</p>
+
 </template>
 
 <style lang="scss" scoped>
@@ -38,5 +41,15 @@ label {
   font-weight: inherit;
   text-align: center;
   cursor: pointer;
+
+  margin: 0;
+}
+
+p {
+  font-size: var(--font-smaller);
+  font-style: italic;
+  text-align: center;
+
+  margin:0;
 }
 </style>

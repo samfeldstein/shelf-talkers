@@ -7,9 +7,9 @@ import Size from "./LogoSize.vue";
 <fieldset class="default">
   <legend>Logo</legend>
   <p>Sized in pixels</p>
-  <Size client:visible />
-  <Upload client:visible />
+  <Size client:only="vue" />
   <Toggle client:visible />
+  <Upload client:visible />
 </fieldset>
 
 <style scoped>

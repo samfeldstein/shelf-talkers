@@ -21,3 +21,9 @@ onMounted(() => {
   <label for="logo-height">Logo Height</label>
   <input id="logo-height" type="number" step="1" v-model="logoHeight" @input="updateLogoHeight" />
 </template>
+
+<style scoped>
+input {
+  margin-bottom: 1rem;
+}
+</style>

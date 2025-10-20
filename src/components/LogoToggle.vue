@@ -1,5 +1,4 @@
 <script setup>
-import { ref, onMounted } from 'vue';
 import { useLogo } from '@/composables/useLogo';
 
 const { showLogo, toggleShowLogo } = useLogo()
