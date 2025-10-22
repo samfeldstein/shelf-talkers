@@ -1,20 +1,36 @@
 <script setup>
 import Logo from './Logo.vue';
+import { defineProps, defineEmits } from 'vue';
 
-defineProps(['title', 'author', 'blurb', 'attribution'])
+const props = defineProps(['title', 'author', 'blurb', 'attribution', 'id']);
+const emit = defineEmits(['update']);
+
+function updateCard(field, event) {
+  // Get the updated content
+  const content = event.target.innerText.trim();
+
+  console.log(`Field "${field}" updated to: "${content}"`);
+
+  // Emit the change to parent
+  emit('update', {
+    id: props.id,
+    field,
+    value: content
+  });
+}
 </script>
 
 <template>
   <div class="card">
     <header>
       <hgroup>
-        <h3 class="title">{{ title }}</h3>
-        <p class="author">{{ author }}</p>
+        <h3 class="title" contenteditable="true" @blur="updateCard('title', $event)">{{ title }}</h3>
+        <p class="author" contenteditable="true" @blur="updateCard('author', $event)">{{ author }}</p>
       </hgroup>
       <Logo />
     </header>
-    <p class="blurb">{{ blurb }}</p>
-    <p class="attribution">{{ attribution }}</p>
+    <p class="blurb" contenteditable="true" @blur="updateCard('blurb', $event)">{{ blurb }}</p>
+    <p class="attribution" contenteditable="true" @blur="updateCard('attribution', $event)">{{ attribution }}</p>
   </div>
 </template>
 
