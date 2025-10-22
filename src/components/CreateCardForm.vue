@@ -4,6 +4,7 @@ import { useCards } from '@/composables/useCards'
 import Modal from "./Modal.vue";
 
 const { cards } = useCards()
+const { addCard } = useCards()
 
 const form = reactive({
   title: "",
@@ -16,7 +17,7 @@ const titleInput = ref(null)
 const success = ref(false)
 
 function submitCard(formData) {
-  cards.value.push({ ...formData })
+  addCard({ ...formData })
 }
 
 function isFormValid() {

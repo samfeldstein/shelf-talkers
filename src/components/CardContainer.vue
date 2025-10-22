@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import Card from './Card.vue';
 import { useCards } from '@/composables/useCards'
 
@@ -16,9 +16,40 @@ const exampleCard = {
 <template>
   <section class="cards">
     <h2>Cards</h2>
-    <!-- Render the example card if no cards exist -->
     <Card v-if="cards.length === 0" v-bind="exampleCard" />
     <Card v-for="card in cards" :key="card.title" v-bind="card" />
+  </section>
+</template> -->
+
+<script setup>
+import Card from './Card.vue';
+import { useCards } from '@/composables/useCards';
+
+const { cards, updateCard } = useCards();
+
+// Example card to show when no cards exist
+const exampleCard = {
+  title: 'Example Title',
+  author: 'Example Author',
+  blurb: 'This is an example card. It will disappear when you create a new talker.',
+  attribution: 'Example Attribution',
+};
+
+// Update this function to call updateCard
+function handleCardUpdate(updateData) {
+  updateCard(updateData.id, updateData.field, updateData.value);
+}
+</script>
+
+<template>
+  <section class="cards">
+    <h2 class="visually-hidden">Cards</h2>
+
+
+    <!-- <Card v-if="cards.length === 0" v-bind="exampleCard" /> -->
+    <!-- Add @update event listener to each card -->
+    <Card v-for="(card, index) in cards" :key="index" :id="index" :title="card.title" :author="card.author"
+      :blurb="card.blurb" :attribution="card.attribution" @update="handleCardUpdate" />
   </section>
 </template>
 
